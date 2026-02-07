@@ -14,12 +14,25 @@ const Main = styled.main`
 function App() {
   return (
     <Main>
-      <Header />
-      <Hero />
-      <Portfolio />
-      <About />
-      <Contact />
-      <Footer />
+      {/* quitar todos los divs ,,, */}
+      <div style={{ border: '1px solid yellow' }}>
+        <Header />
+      </div>
+      <div style={{ border: '1px solid red' }}>
+        <Hero />
+      </div>
+      <div style={{ border: '1px solid blue' }}>
+        <Portfolio />
+      </div>
+      <div style={{ border: '1px solid green' }}>
+        <About />
+      </div>
+      <div style={{ border: '1px solid violet' }}>
+        <Contact />
+      </div>
+      <div style={{ border: '1px solid orange' }}>
+        <Footer />
+      </div>
     </Main>
   )
 }
