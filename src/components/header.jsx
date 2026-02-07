@@ -10,9 +10,10 @@ const HeaderWrapper = styled.header`
   right: 0;
   z-index: 50;
   transition: all 0.3s;
-  background-color: ${props => props.$scrolled ? 'rgba(10, 10, 10, 0.95)' : 'transparent'};
+  background-color: rgba(10, 10, 10, 0.85);
   backdrop-filter: ${props => props.$scrolled ? 'blur(8px)' : 'none'};
   border-bottom: ${props => props.$scrolled ? '1px solid #2a2a2a' : 'none'};
+  border: 1px solid yellow; /* ,,, borrar */
 `
 
 const Nav = styled.nav`
