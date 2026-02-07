@@ -30,12 +30,10 @@ const Logo = styled.a`
   font-size: 1.25rem;
   letter-spacing: 0.3em;
   color: #c9a962;
-  text-decoration: none;
-  transition: color 0.3s;
-
   &:hover {
     color: rgba(201, 169, 98, 0.8);
-  }
+    }
+  transition: color 0.3s;
 `
 
 const NavLinks = styled.div`
@@ -48,12 +46,11 @@ const NavLink = styled.a`
   font-size: 0.875rem;
   letter-spacing: 0.2em;
   color: rgba(245, 245, 245, 0.8);
-  text-decoration: none;
-  transition: color 0.3s;
-
+  /* ,,, ver si usa algun preprocesador */
   &:hover {
     color: #c9a962;
-  }
+    }
+  transition: color 0.3s;
 `
 
 export function Header() {
@@ -70,6 +67,7 @@ export function Header() {
   return (
     <HeaderWrapper $scrolled={scrolled}>
       <Nav>
+        {/* ,,, sacar # de los ruteos o ver para que son */}
         <Logo href="#">CAPUZZ</Logo>
         <NavLinks>
           <NavLink href="#work">WORK</NavLink>
