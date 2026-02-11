@@ -20,13 +20,13 @@ function App() {
         {/* <Hero /> */}
       </div>
       <div style={{ border: '1px solid blue' }}>
-        {/* <Portfolio /> */}
+        <Portfolio />
       </div>
       <div style={{ border: '1px solid green' }}>
-        {/* <About /> */}
+        <About />
       </div>
       <div style={{ border: '1px solid violet' }}>
-        {/* <Contact /> */}
+        <Contact />
       </div>
       <div style={{ border: '1px solid orange' }}>
         <Footer />

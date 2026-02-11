@@ -1,76 +1,58 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import styled from "styled-components"
-
-
+import { Menu, X } from "lucide-react"
+/* ,,, analizar ahora con burger menu */
 
 const HeaderWrapper = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  transition: all 0.3s;
-  background-color: rgba(10, 10, 10, 0.85);
-  backdrop-filter: ${props => props.$scrolled ? 'blur(8px)' : 'none'};
-  border-bottom: ${props => props.$scrolled ? '1px solid #2a2a2a' : 'none'};
-  border: 1px solid yellow; /* ,,, borrar (componente analizado) */
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background-color: rgba(10, 10, 10, 0.95);
+  border-bottom: 1px solid #2a2a2a;
 `
 
 const Nav = styled.nav`
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1.25rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: 1280px; margin: 0 auto; padding: 1rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
 `
 
 const Logo = styled.a`
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  letter-spacing: 0.3em;
-  color: #c9a962;
-  &:hover {
-    color: rgba(201, 169, 98, 0.8);
-  }
-  transition: color 0.3s;
+  font-family: var(--font-serif); font-size: 1.25rem; letter-spacing: 0.2em; color: #c9a962;
+`
+
+const MenuBtn = styled.button`
+  display: none; color: white; background: none; border: none; cursor: pointer;
+  @media (max-width: 768px) { display: block; }
 `
 
 const NavLinks = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
+  display: flex; gap: 2rem;
+  
+  @media (max-width: 768px) {
+    display: ${props => props.$isOpen ? 'flex' : 'none'};
+    flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: #0a0a0a; padding: 2rem; border-bottom: 1px solid #2a2a2a;
+  }
 `
 
 const NavLink = styled.a`
-  font-size: 0.875rem;
-  letter-spacing: 0.2em;
-  color: rgba(245, 245, 245, 0.8);
-  &:hover {
-    color: #c9a962;
-  }
-  transition: color 0.3s;
+  font-size: 0.8rem; letter-spacing: 0.2em; color: white;
+  &:hover { color: #c9a962; }
 `
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <HeaderWrapper $scrolled={scrolled}>
+    <HeaderWrapper>
       <Nav>
         <Logo href="#">CAPUZZ</Logo>
-        <NavLinks>
-          <NavLink href="#work">WORK</NavLink>
-          <NavLink href="#about">ABOUT</NavLink>
-          <NavLink href="#contact">CONTACT</NavLink>
+        <MenuBtn onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X /> : <Menu />}
+        </MenuBtn>
+        <NavLinks $isOpen={isOpen}>
+          <NavLink href="#work" onClick={() => setIsOpen(false)}>WORK</NavLink>
+          <NavLink href="#about" onClick={() => setIsOpen(false)}>ABOUT</NavLink>
+          <NavLink href="#contact" onClick={() => setIsOpen(false)}>CONTACT</NavLink>
         </NavLinks>
       </Nav>
     </HeaderWrapper>
