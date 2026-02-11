@@ -13,7 +13,7 @@ const HeaderWrapper = styled.header`
   background-color: rgba(10, 10, 10, 0.85);
   backdrop-filter: ${props => props.$scrolled ? 'blur(8px)' : 'none'};
   border-bottom: ${props => props.$scrolled ? '1px solid #2a2a2a' : 'none'};
-  border: 1px solid yellow; /* ,,, borrar */
+  border: 1px solid yellow; /* ,,, borrar (componente analizado) */
 `
 
 const Nav = styled.nav`
