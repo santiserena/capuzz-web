@@ -32,7 +32,7 @@ const Logo = styled.a`
   color: #c9a962;
   &:hover {
     color: rgba(201, 169, 98, 0.8);
-    }
+  }
   transition: color 0.3s;
 `
 
@@ -46,10 +46,9 @@ const NavLink = styled.a`
   font-size: 0.875rem;
   letter-spacing: 0.2em;
   color: rgba(245, 245, 245, 0.8);
-  /* ,,, ver si usa algun preprocesador */
   &:hover {
     color: #c9a962;
-    }
+  }
   transition: color 0.3s;
 `
 
