@@ -66,7 +66,6 @@ export function Header() {
   return (
     <HeaderWrapper $scrolled={scrolled}>
       <Nav>
-        {/* ,,, sacar # de los ruteos o ver para que son */}
         <Logo href="#">CAPUZZ</Logo>
         <NavLinks>
           <NavLink href="#work">WORK</NavLink>
