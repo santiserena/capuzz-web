@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styled from "styled-components"
 import { Menu, X } from "lucide-react"
-/* ,,, analizar ahora con burger menu */
+/* ,,, analizar ahora con burger menu e intentar simplificar*/
 
 const HeaderWrapper = styled.header`
   position: fixed; top: 0; left: 0; right: 0; z-index: 50;
