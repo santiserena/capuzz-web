@@ -45,7 +45,7 @@ const NavLinks = styled.div`
     flex-direction: column;
     position: absolute; top: 100%; left: 0; right: 0;
     background: #0a0a0a;
-    padding: 2rem;
+    padding: 1rem 2rem;
     border-bottom: 1px solid #2a2a2a;
   }
 `
