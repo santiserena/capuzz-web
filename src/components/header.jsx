@@ -6,7 +6,7 @@ const HeaderWrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   z-index: 50;
   background-color: rgba(10, 10, 10, 0.95);
   border-bottom: 1px solid #2a2a2a;
