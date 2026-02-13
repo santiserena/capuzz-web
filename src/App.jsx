@@ -13,6 +13,7 @@ const Main = styled.main`
 
 function App() {
   return (
+    /* ,,, analizar como deben estar organizadas las partes */
     <>
       <Header />
       <Main>

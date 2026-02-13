@@ -63,6 +63,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
+    /* ,,, analizar un poquito mas como se ordena cada menu para entender mejor */
     <HeaderWrapper>
       <Nav>
         <Logo href="#">CAPUZZ</Logo>
