@@ -44,7 +44,7 @@ const NavLinks = styled.div`
     display: ${props => props.$isOpen ? 'flex' : 'none'};
     flex-direction: column;
     position: absolute; top: 100%; left: 0; right: 0;
-    background: #0a0a0a;
+    background: rgba(10, 10, 10, 0.95);
     padding: 1rem 2rem;
     border-bottom: 1px solid #2a2a2a;
   }
