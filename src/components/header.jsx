@@ -20,10 +20,6 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-
-  @media (max-width: 768px) {
-    align-items: stretch;
-  }
 `
 
 const Logo = styled.a`
@@ -74,11 +70,9 @@ export function Header() {
     <HeaderWrapper>
       <Nav>
         <Logo href="#">CAPUZZ</Logo>
-
         <MenuBtn onClick={() => setIsOpen(prev => !prev)}>
           {isOpen ? <X /> : <Menu />}
         </MenuBtn>
-
         <NavLinks $isOpen={isOpen}>
           <NavLink href="#work" onClick={() => setIsOpen(false)}>WORK</NavLink>
           <NavLink href="#about" onClick={() => setIsOpen(false)}>ABOUT</NavLink>
