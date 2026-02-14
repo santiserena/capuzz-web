@@ -19,18 +19,11 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+  flex-wrap: wrap;
+
   @media (max-width: 768px) {
-    flex-direction: column;
     align-items: stretch;
   }
-`
-
-const NavTopRow = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
 `
 
 const Logo = styled.a`
@@ -45,6 +38,7 @@ const MenuBtn = styled.button`
   color: white;
   border: none;
   cursor: pointer;
+
   @media (max-width: 768px) {
     display: block;
   }
@@ -53,7 +47,7 @@ const MenuBtn = styled.button`
 const NavLinks = styled.div`
   display: flex;
   gap: 2rem;
-  
+
   @media (max-width: 768px) {
     display: ${props => props.$isOpen ? 'flex' : 'none'};
     flex-direction: column;
@@ -67,6 +61,7 @@ const NavLink = styled.a`
   font-size: 0.8rem;
   letter-spacing: 0.2em;
   color: white;
+
   &:hover {
     color: #c9a962;
   }
@@ -78,12 +73,12 @@ export function Header() {
   return (
     <HeaderWrapper>
       <Nav>
-        <NavTopRow>
-          <Logo href="#">CAPUZZ</Logo>
-          <MenuBtn onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X /> : <Menu />}
-          </MenuBtn>
-        </NavTopRow>
+        <Logo href="#">CAPUZZ</Logo>
+
+        <MenuBtn onClick={() => setIsOpen(prev => !prev)}>
+          {isOpen ? <X /> : <Menu />}
+        </MenuBtn>
+
         <NavLinks $isOpen={isOpen}>
           <NavLink href="#work" onClick={() => setIsOpen(false)}>WORK</NavLink>
           <NavLink href="#about" onClick={() => setIsOpen(false)}>ABOUT</NavLink>
