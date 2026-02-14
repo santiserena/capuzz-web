@@ -19,7 +19,7 @@ function App() {
       <Main>
         {/* quitar todos los divs ,,, */}
         <div style={{ border: '1px solid red' }}>
-          {/* <Hero /> */}
+          <Hero />
         </div>
         <div style={{ border: '1px solid blue' }}>
           <Portfolio />

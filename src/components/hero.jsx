@@ -8,6 +8,7 @@ const bounce = keyframes`
 `
 
 const HeroSection = styled.section`
+  overflow: auto;     /* para que no se salga de la pantalla ,,, */
   position: relative;
   min-height: 100vh;
   display: flex;
