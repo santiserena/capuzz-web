@@ -19,6 +19,18 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+`
+
+const NavTopRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 `
 
 const Logo = styled.a`
@@ -39,14 +51,15 @@ const MenuBtn = styled.button`
 `
 
 const NavLinks = styled.div`
-  display: flex; gap: 2rem;
+  display: flex;
+  gap: 2rem;
+  
   @media (max-width: 768px) {
     display: ${props => props.$isOpen ? 'flex' : 'none'};
     flex-direction: column;
-    position: absolute; top: 100%; left: 0; right: 0;
-    background: rgba(10, 10, 10, 0.95);
-    padding: 1rem 2rem;
-    border-bottom: 1px solid #2a2a2a;
+    width: 100%;
+    padding-top: 1rem;
+    gap: 1rem;
   }
 `
 
@@ -63,13 +76,14 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    /* ,,, analizar un poquito mas como se ordena cada menu para entender mejor */
     <HeaderWrapper>
       <Nav>
-        <Logo href="#">CAPUZZ</Logo>
-        <MenuBtn onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X /> : <Menu />}
-        </MenuBtn>
+        <NavTopRow>
+          <Logo href="#">CAPUZZ</Logo>
+          <MenuBtn onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X /> : <Menu />}
+          </MenuBtn>
+        </NavTopRow>
         <NavLinks $isOpen={isOpen}>
           <NavLink href="#work" onClick={() => setIsOpen(false)}>WORK</NavLink>
           <NavLink href="#about" onClick={() => setIsOpen(false)}>ABOUT</NavLink>
