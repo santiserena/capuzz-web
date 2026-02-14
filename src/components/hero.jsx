@@ -10,14 +10,14 @@ const HeroSection = styled.section`
   position: relative;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
   overflow: hidden;
+  text-align: center;
 `
 
-const TitleGlow = styled.div`
+const Glow = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -25,18 +25,15 @@ const TitleGlow = styled.div`
   width: 100%;
   max-width: 800px;
   height: 400px;
-  background: radial-gradient(ellipse at center, rgba(201, 169, 98, 0.15) 0%, rgba(201, 169, 98, 0.08) 30%, transparent 70%);
-  pointer-events: none;
+  background: radial-gradient(ellipse, rgba(201, 169, 98, 0.15), rgba(201, 169, 98, 0.08) 30%, transparent 70%);
   filter: blur(40px);
+  pointer-events: none;
 `
 
-const ContentWrapper = styled.div`
+const Content = styled.div`
   position: relative;
-  z-index: 10;
-  text-align: center;
+  z-index: 1;
   max-width: 56rem;
-  width: 100%;
-  margin: 0 auto;
 `
 
 const Subtitle = styled.p`
@@ -57,59 +54,39 @@ const Title = styled.h1`
 `
 
 const Description = styled.p`
-  color: #888888;
-  font-size: 1.125rem;
+  color: #888;
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
   max-width: 42rem;
   margin: 0 auto 3rem;
   line-height: 1.7;
-
-  @media (min-width: 768px) {
-    font-size: 1.25rem;
-  }
 `
 
-const ButtonGroup = styled.div`
+const Buttons = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
-
-  @media (min-width: 640px) {
-    flex-direction: row;
-  }
+  justify-content: center;
 `
 
-const PrimaryButton = styled.a`
+const Button = styled.a`
   padding: 1rem 2rem;
-  background-color: #c9a962;
-  color: #0a0a0a;
   font-size: 0.875rem;
   letter-spacing: 0.2em;
-  transition: background-color 0.3s;
   text-decoration: none;
-
-  &:hover {
-    background-color: rgba(201, 169, 98, 0.9);
-  }
+  transition: all 0.3s;
+  
+  ${props => props.$primary ? `
+    background: #c9a962;
+    color: #0a0a0a;
+    &:hover { background: rgba(201, 169, 98, 0.9); }
+  ` : `
+    border: 1px solid rgba(245, 245, 245, 0.3);
+    color: #f5f5f5;
+    &:hover { border-color: #c9a962; color: #c9a962; }
+  `}
 `
 
-const SecondaryButton = styled.a`
-  padding: 1rem 2rem;
-  border: 1px solid rgba(245, 245, 245, 0.3);
-  color: #f5f5f5;
-  font-size: 0.875rem;
-  letter-spacing: 0.2em;
-  transition: border-color 0.3s, color 0.3s;
-  text-decoration: none;
-
-  &:hover {
-    border-color: #c9a962;
-    color: #c9a962;
-  }
-`
-
-const ScrollIndicator = styled.button`
+const Scroll = styled.button`
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -118,55 +95,50 @@ const ScrollIndicator = styled.button`
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: #888888;
+  color: #888;
   background: none;
   border: none;
   cursor: pointer;
   transition: color 0.3s;
-
-  &:hover {
-    color: #c9a962;
+  
+  &:hover { color: #c9a962; }
+  
+  span {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+  }
+  
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    animation: ${bounce} 1.5s infinite;
   }
 `
 
-const ScrollText = styled.span`
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
-`
-
-const BouncingIcon = styled(ChevronDown)`
-  width: 1.25rem;
-  height: 1.25rem;
-  animation: ${bounce} 1.5s infinite;
-`
-
 export function Hero() {
-  const handleScrollToGallery = () => {
-    const gallerySection = document.getElementById("work")
-    if (gallerySection) {
-      gallerySection.scrollIntoView({ behavior: "smooth" })
-    }
+  const scrollToGallery = () => {
+    document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
     <HeroSection>
-      <TitleGlow />
-      <ContentWrapper>
+      <Glow />
+      <Content>
         <Subtitle>Fantasy Illustrator</Subtitle>
         <Title>CAPUZZ</Title>
         <Description>
           Crafting dark fantasy worlds, mythical creatures, and unforgettable
           characters through ink, watercolor, and digital artistry
         </Description>
-        <ButtonGroup>
-          <PrimaryButton href="#work">VIEW PORTFOLIO</PrimaryButton>
-          <SecondaryButton href="#contact">GET IN TOUCH</SecondaryButton>
-        </ButtonGroup>
-      </ContentWrapper>
-      <ScrollIndicator onClick={handleScrollToGallery} type="button">
-        <ScrollText>SCROLL</ScrollText>
-        <BouncingIcon />
-      </ScrollIndicator>
+        <Buttons>
+          <Button $primary href="#work">VIEW PORTFOLIO</Button>
+          <Button href="#contact">GET IN TOUCH</Button>
+        </Buttons>
+      </Content>
+      <Scroll onClick={scrollToGallery}>
+        <span>SCROLL</span>
+        <ChevronDown />
+      </Scroll>
     </HeroSection>
   )
 }
