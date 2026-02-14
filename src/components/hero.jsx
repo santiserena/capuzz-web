@@ -72,7 +72,6 @@ const Button = styled.a`
   padding: 1rem 2rem;
   font-size: 0.875rem;
   letter-spacing: 0.2em;
-  text-decoration: none;
   transition: all 0.3s;
   
   ${props => props.$primary ? `
@@ -107,12 +106,12 @@ const Scroll = styled.button`
     font-size: 0.75rem;
     letter-spacing: 0.3em;
   }
-  
-  svg {
-    width: 1.25rem;
-    height: 1.25rem;
-    animation: ${bounce} 1.5s infinite;
-  }
+`
+
+const ScrollIcon = styled(ChevronDown)`
+  width: 1.25rem;
+  height: 1.25rem;
+  animation: ${bounce} 1.5s infinite;
 `
 
 export function Hero() {
@@ -137,7 +136,7 @@ export function Hero() {
       </Content>
       <Scroll onClick={scrollToGallery}>
         <span>SCROLL</span>
-        <ChevronDown />
+        <ScrollIcon />
       </Scroll>
     </HeroSection>
   )
