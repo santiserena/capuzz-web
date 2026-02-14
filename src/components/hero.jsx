@@ -1,4 +1,3 @@
-/* ,,, en análisis */
 import styled, { keyframes } from "styled-components"
 import { ChevronDown } from "lucide-react"
 
@@ -8,7 +7,6 @@ const bounce = keyframes`
 `
 
 const HeroSection = styled.section`
-  overflow: auto;     /* para que no se salga de la pantalla ,,, */
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -16,6 +14,7 @@ const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+  overflow: hidden;
 `
 
 const TitleGlow = styled.div`
@@ -23,7 +22,8 @@ const TitleGlow = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -60%);
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   height: 400px;
   background: radial-gradient(ellipse at center, rgba(201, 169, 98, 0.15) 0%, rgba(201, 169, 98, 0.08) 30%, transparent 70%);
   pointer-events: none;
@@ -35,6 +35,7 @@ const ContentWrapper = styled.div`
   z-index: 10;
   text-align: center;
   max-width: 56rem;
+  width: 100%;
   margin: 0 auto;
 `
 
