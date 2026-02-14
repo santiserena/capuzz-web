@@ -19,7 +19,18 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+`
+
+const TopRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 `
 
 const Logo = styled.a`
@@ -69,10 +80,13 @@ export function Header() {
   return (
     <HeaderWrapper>
       <Nav>
-        <Logo href="#">CAPUZZ</Logo>
-        <MenuBtn onClick={() => setIsOpen(prev => !prev)}>
-          {isOpen ? <X /> : <Menu />}
-        </MenuBtn>
+        <TopRow>
+          <Logo href="#">CAPUZZ</Logo>
+          <MenuBtn onClick={() => setIsOpen(prev => !prev)}>
+            {isOpen ? <X /> : <Menu />}
+          </MenuBtn>
+        </TopRow>
+
         <NavLinks $isOpen={isOpen}>
           <NavLink href="#work" onClick={() => setIsOpen(false)}>WORK</NavLink>
           <NavLink href="#about" onClick={() => setIsOpen(false)}>ABOUT</NavLink>
