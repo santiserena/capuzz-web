@@ -1,13 +1,7 @@
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import { ChevronDown } from "lucide-react"
 
-const bounce = keyframes`
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
-`
-
 const HeroSection = styled.section`
-  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -26,8 +20,6 @@ const Glow = styled.div`
   max-width: 800px;
   height: 400px;
   background: radial-gradient(ellipse, rgba(201, 169, 98, 0.15), rgba(201, 169, 98, 0.08) 30%, transparent 70%);
-  filter: blur(40px);
-  pointer-events: none;
 `
 
 const Content = styled.div`
@@ -111,7 +103,12 @@ const Scroll = styled.button`
 const ScrollIcon = styled(ChevronDown)`
   width: 1.25rem;
   height: 1.25rem;
-  animation: ${bounce} 1.5s infinite;
+  animation: bounce 1.5s infinite;
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
 `
 
 export function Hero() {
