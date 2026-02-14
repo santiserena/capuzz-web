@@ -22,12 +22,6 @@ const Glow = styled.div`
   background: radial-gradient(ellipse, rgba(201, 169, 98, 0.15), rgba(201, 169, 98, 0.08) 30%, transparent 70%);
 `
 
-const Content = styled.div`
-  position: relative;
-  z-index: 1;
-  max-width: 56rem;
-`
-
 const Subtitle = styled.p`
   color: #c9a962;
   font-size: 0.875rem;
@@ -63,10 +57,10 @@ const Buttons = styled.div`
 const Button = styled.a`
   padding: 1rem 2rem;
   font-size: 0.875rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.2rem;
   transition: all 0.3s;
   
-  ${props => props.$primary ? `
+  ${props => props.$primaryBtn ? `
     background: #c9a962;
     color: #0a0a0a;
     &:hover { background: rgba(201, 169, 98, 0.9); }
@@ -119,7 +113,7 @@ export function Hero() {
   return (
     <HeroSection>
       <Glow />
-      <Content>
+      <div>
         <Subtitle>Fantasy Illustrator</Subtitle>
         <Title>CAPUZZ</Title>
         <Description>
@@ -127,10 +121,11 @@ export function Hero() {
           characters through ink, watercolor, and digital artistry
         </Description>
         <Buttons>
-          <Button $primary href="#work">VIEW PORTFOLIO</Button>
+          {/* ,,, seguir desde aca: ver porque primaryBtn */}
+          <Button $primaryBtn href="#work">VIEW PORTFOLIO</Button>
           <Button href="#contact">GET IN TOUCH</Button>
         </Buttons>
-      </Content>
+      </div>
       <Scroll onClick={scrollToGallery}>
         <span>SCROLL</span>
         <ScrollIcon />
