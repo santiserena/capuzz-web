@@ -22,7 +22,6 @@ const Nav = styled.nav`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: stretch;
   }
 `
 
@@ -82,7 +81,7 @@ export function Header() {
       <Nav>
         <TopRow>
           <Logo href="#">CAPUZZ</Logo>
-          <MenuBtn onClick={() => setIsOpen(prev => !prev)}>
+          <MenuBtn onClick={() => setIsOpen(el => !el)}>
             {isOpen ? <X /> : <Menu />}
           </MenuBtn>
         </TopRow>
