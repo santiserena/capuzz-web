@@ -46,7 +46,7 @@ const Description = styled.p`
   margin: 0 auto 3rem;
   line-height: 1.7;
 `
-
+/* ,,, sacar flex wrap */
 const Buttons = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -126,6 +126,8 @@ export function Hero() {
           <Button href="#contact">GET IN TOUCH</Button>
         </Buttons>
       </div>
+      {/* ,,, intentar remplazar por a */}
+      {/* ,,, ver que pasa en dispositivos muy pequeños que se achica el ancho total! */}
       <Scroll onClick={scrollToGallery}>
         <span>SCROLL</span>
         <ScrollIcon />
