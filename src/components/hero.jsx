@@ -32,7 +32,7 @@ const Subtitle = styled.p`
 
 const Title = styled.h1`
   font-family: var(--font-serif);
-  font-size: clamp(4rem, 12vw, 9rem);
+  font-size: clamp(1rem, 12vw, 9rem);
   letter-spacing: 0.15em;
   color: #f5f5f5;
   margin-bottom: 2rem;
@@ -41,10 +41,11 @@ const Title = styled.h1`
 
 const Description = styled.p`
   color: #888;
-  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-size: 1.25rem;
   max-width: 42rem;
   margin: 0 auto 3rem;
   line-height: 1.7;
+  overflow-wrap: break-word;
 `
 /* ,,, sacar flex wrap */
 const Buttons = styled.div`
@@ -60,15 +61,23 @@ const Button = styled.a`
   letter-spacing: 0.2rem;
   transition: all 0.3s;
   
-  ${props => props.$primaryBtn ? `
+  ${props => props.$primaryBtn ?
+    `
     background: #c9a962;
     color: #0a0a0a;
-    &:hover { background: rgba(201, 169, 98, 0.9); }
-  ` : `
+    &:hover { 
+      background: rgba(201, 169, 98, 0.9); 
+    }
+  `
+    :
+    `
     border: 1px solid rgba(245, 245, 245, 0.3);
     color: #f5f5f5;
-    &:hover { border-color: #c9a962; color: #c9a962; }
-  `}
+    &:hover {
+      border-color: #c9a962; color: #c9a962;
+    }
+  `
+  }
 `
 
 const Scroll = styled.button`
