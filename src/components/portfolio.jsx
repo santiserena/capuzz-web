@@ -40,7 +40,7 @@ const artworks = [
   },
 ]
 
-const filters = ["all", "digital", "watercolor", "ink", "comic", "environment", "character", "creature", "cover"]
+const filters = ["all", "digital", "watercolor", "ink", "comic", "environment", "character", "cover"]
 
 const Section = styled.section`
   padding: 6rem 1.5rem;
@@ -49,10 +49,6 @@ const Section = styled.section`
 const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
-`
-
-const SectionHeader = styled.div`
-  margin-bottom: 4rem;
 `
 
 const SectionLabel = styled.p`
@@ -69,6 +65,7 @@ const SectionTitle = styled.h2`
   letter-spacing: 0.05em;
   color: #f5f5f5;
   font-weight: 400;
+  margin-bottom: 4rem;
 `
 
 const FiltersWrapper = styled.div`
@@ -77,8 +74,6 @@ const FiltersWrapper = styled.div`
   gap: 0.75rem;
   margin-bottom: 3rem;
 `
-
-
 
 const FilterButton = styled.button`
   padding: 0.5rem 1rem;
@@ -111,26 +106,6 @@ const GalleryGrid = styled.div`
   }
 `
 
-const ArtworkCard = styled.div`
-  position: relative;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  background-color: #111111;
-  cursor: pointer;
-
-  &:hover img {
-    transform: scale(1.05);
-  }
-
-  &:hover .overlay {
-    opacity: 1;
-  }
-
-  &:hover .content {
-    transform: translateY(0);
-  }
-`
-
 const ArtworkImage = styled.img`
   width: 100%;
   height: 100%;
@@ -146,16 +121,6 @@ const ArtworkOverlay = styled.div`
   transition: opacity 0.3s;
 `
 
-const ArtworkContent = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1.5rem;
-  transform: translateY(100%);
-  transition: transform 0.3s;
-`
-
 const ArtworkTitle = styled.h3`
   font-family: var(--font-serif);
   font-size: 1.25rem;
@@ -168,6 +133,36 @@ const ArtworkMeta = styled.p`
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #c9a962;
+`
+
+const ArtworkContent = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+`
+
+const ArtworkCard = styled.div`
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-color: #111111;
+  cursor: pointer;
+
+  &:hover ${ArtworkImage} {
+    transform: scale(1.05);
+  }
+
+  &:hover ${ArtworkOverlay} {
+    opacity: 1;
+  }
+
+  &:hover ${ArtworkContent} {
+    transform: translateY(0);
+  }
 `
 
 // Lightbox styles
@@ -189,15 +184,6 @@ const LightboxContent = styled.div`
   align-items: center;
   max-width: 90vw;
   max-height: 90vh;
-`
-
-const LightboxImageWrapper = styled.div`
-  position: relative;
-  max-width: 100%;
-  max-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `
 
 const LightboxImage = styled.img`
@@ -267,12 +253,10 @@ export function Portfolio() {
   return (
     <Section id="work">
       <Container>
-        <SectionHeader>
-          <SectionLabel>Portfolio</SectionLabel>
-          <SectionTitle>
-            Selected<br />Works
-          </SectionTitle>
-        </SectionHeader>
+        <SectionLabel>Portfolio</SectionLabel>
+        <SectionTitle>
+          Selected<br />Works
+        </SectionTitle>
 
         <FiltersWrapper>
           {filters.map((filter) => (
@@ -296,8 +280,8 @@ export function Portfolio() {
                 src={artwork.image}
                 alt={artwork.title}
               />
-              <ArtworkOverlay className="overlay" />
-              <ArtworkContent className="content">
+              <ArtworkOverlay />
+              <ArtworkContent>
                 <ArtworkTitle>{artwork.title}</ArtworkTitle>
                 <ArtworkMeta>{artwork.medium} / {artwork.category}</ArtworkMeta>
               </ArtworkContent>
@@ -312,12 +296,10 @@ export function Portfolio() {
             <X size={32} />
           </CloseButton>
           <LightboxContent onClick={(e) => e.stopPropagation()}>
-            <LightboxImageWrapper>
-              <LightboxImage
-                src={lightboxImage.image}
-                alt={lightboxImage.title}
-              />
-            </LightboxImageWrapper>
+            <LightboxImage
+              src={lightboxImage.image}
+              alt={lightboxImage.title}
+            />
             <LightboxInfo>
               <LightboxCategory>
                 {lightboxImage.medium} / {lightboxImage.category}
