@@ -2,10 +2,8 @@ import styled from "styled-components"
 import { ChevronDown } from "lucide-react"
 
 const HeroSection = styled.section`
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   padding: 1.5rem;
   padding-top: 6rem;
@@ -51,8 +49,8 @@ const Description = styled.p`
 
 const Buttons = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   gap: 1rem;
 
   @media (min-width: 640px) {

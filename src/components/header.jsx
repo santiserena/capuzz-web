@@ -80,7 +80,7 @@ export function Header() {
     <HeaderWrapper>
       <Nav>
         <TopRow>
-          <Logo href="#">CAPUZZ</Logo>
+          <Logo href="#" onClick={() => setIsOpen(false)}>CAPUZZ</Logo>
           <MenuBtn onClick={() => setIsOpen(el => !el)}>
             {isOpen ? <X /> : <Menu />}
           </MenuBtn>

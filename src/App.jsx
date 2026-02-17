@@ -13,7 +13,7 @@ const Main = styled.main`
 
 function App() {
   return (
-    /* ,,, analizar como deben estar organizadas las partes | ver puerto 5173 */
+    /* ,,, analizar como deben estar organizadas las partes | ver puerto 5173 | ver si meto variables para los colores */
     <>
       <Header />
       <Main>
