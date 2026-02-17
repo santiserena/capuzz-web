@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react"
 const HeroSection = styled.section`
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
@@ -77,19 +78,17 @@ const Button = styled.a`
 `
 
 const Scroll = styled.button`
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: #888;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color 0.3s;
+
   &:hover { color: #c9a962; }
   span { font-size: 0.75rem; letter-spacing: 0.3em; }
 `
