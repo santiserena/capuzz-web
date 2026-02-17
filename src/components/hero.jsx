@@ -77,7 +77,7 @@ const Button = styled.a`
   `}
 `
 
-const Scroll = styled.button`
+const Scroll = styled.a`
   margin-top: 2.5rem;
   background: none;
   border: none;
@@ -119,7 +119,7 @@ export function Hero() {
           <Button href="#contact">GET IN TOUCH</Button>
         </Buttons>
       </div>
-      <Scroll onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}>
+      <Scroll href="#work">
         <span>SCROLL</span>
         <ScrollIcon />
       </Scroll>
