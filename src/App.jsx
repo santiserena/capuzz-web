@@ -18,9 +18,7 @@ function App() {
       <Header />
       <Main>
         {/* quitar todos los divs ,,, */}
-        <div style={{ border: '1px solid red' }}>
-          <Hero />
-        </div>
+        <Hero />
         <div style={{ border: '1px solid blue' }}>
           <Portfolio />
         </div>
