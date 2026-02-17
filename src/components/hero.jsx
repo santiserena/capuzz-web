@@ -7,6 +7,7 @@ const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+  padding-top: 6rem;
   text-align: center;
 `
 
