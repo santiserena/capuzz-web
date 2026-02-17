@@ -47,12 +47,17 @@ const Description = styled.p`
   line-height: 1.7;
   overflow-wrap: break-word;
 `
-/* ,,, sacar flex wrap */
+
 const Buttons = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
-  justify-content: center;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: center;
+  }
 `
 
 const Button = styled.a`
@@ -60,24 +65,15 @@ const Button = styled.a`
   font-size: 0.875rem;
   letter-spacing: 0.2rem;
   transition: all 0.3s;
-  
-  ${props => props.$primaryBtn ?
-    `
+  ${props => props.$primaryBtn ? `
     background: #c9a962;
     color: #0a0a0a;
-    &:hover { 
-      background: rgba(201, 169, 98, 0.9); 
-    }
-  `
-    :
-    `
+    &:hover { background: rgba(201, 169, 98, 0.9); }
+  ` : `
     border: 1px solid rgba(245, 245, 245, 0.3);
     color: #f5f5f5;
-    &:hover {
-      border-color: #c9a962; color: #c9a962;
-    }
-  `
-  }
+    &:hover { border-color: #c9a962; color: #c9a962; }
+  `}
 `
 
 const Scroll = styled.button`
@@ -94,20 +90,14 @@ const Scroll = styled.button`
   border: none;
   cursor: pointer;
   transition: color 0.3s;
-  
   &:hover { color: #c9a962; }
-  
-  span {
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
-  }
+  span { font-size: 0.75rem; letter-spacing: 0.3em; }
 `
 
 const ScrollIcon = styled(ChevronDown)`
   width: 1.25rem;
   height: 1.25rem;
   animation: bounce 1.5s infinite;
-  
   @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(6px); }
@@ -115,10 +105,6 @@ const ScrollIcon = styled(ChevronDown)`
 `
 
 export function Hero() {
-  const scrollToGallery = () => {
-    document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
     <HeroSection>
       <Glow />
@@ -134,12 +120,10 @@ export function Hero() {
           <Button href="#contact">GET IN TOUCH</Button>
         </Buttons>
       </div>
-      <Scroll onClick={scrollToGallery}>
+      <Scroll onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}>
         <span>SCROLL</span>
         <ScrollIcon />
       </Scroll>
-      {/* ,,, ver que pasa en dispositivos muy pequeños que se achica el ancho total! */}
-      {/* ,,, <Scroll onClick={scrollToGallery}> intentar remplazar por a */}
     </HeroSection>
   )
 }
