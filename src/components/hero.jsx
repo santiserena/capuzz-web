@@ -121,17 +121,16 @@ export function Hero() {
           characters through ink, watercolor, and digital artistry
         </Description>
         <Buttons>
-          {/* ,,, seguir desde aca: ver porque primaryBtn */}
           <Button $primaryBtn href="#work">VIEW PORTFOLIO</Button>
           <Button href="#contact">GET IN TOUCH</Button>
         </Buttons>
       </div>
-      {/* ,,, intentar remplazar por a */}
-      {/* ,,, ver que pasa en dispositivos muy pequeños que se achica el ancho total! */}
       <Scroll onClick={scrollToGallery}>
         <span>SCROLL</span>
         <ScrollIcon />
       </Scroll>
+      {/* ,,, ver que pasa en dispositivos muy pequeños que se achica el ancho total! */}
+      {/* ,,, <Scroll onClick={scrollToGallery}> intentar remplazar por a */}
     </HeroSection>
   )
 }
