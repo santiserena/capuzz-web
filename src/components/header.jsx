@@ -87,7 +87,7 @@ export function Header() {
         </TopRow>
 
         <NavLinks $isOpen={isOpen}>
-          <NavLink href="#work" onClick={() => setIsOpen(false)}>WORK</NavLink>
+          <NavLink href="#work" onClick={() => setIsOpen(false)}>GALLERY</NavLink>
           <NavLink href="#about" onClick={() => setIsOpen(false)}>ABOUT</NavLink>
           <NavLink href="#contact" onClick={() => setIsOpen(false)}>CONTACT</NavLink>
         </NavLinks>

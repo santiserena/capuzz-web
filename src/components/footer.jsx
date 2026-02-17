@@ -63,7 +63,7 @@ export function Footer() {
         <Logo href="#">CAPUZZ</Logo>
         <Copyright>&copy; {new Date().getFullYear()} All rights reserved.</Copyright>
         <NavLinks>
-          <NavLink href="#work">Work</NavLink>
+          <NavLink href="#work">Gallery</NavLink>
           <NavLink href="#about">About</NavLink>
           <NavLink href="#contact">Contact</NavLink>
         </NavLinks>

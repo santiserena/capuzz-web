@@ -187,9 +187,9 @@ export function Portfolio() {
   return (
     <Section id="work">
       <Container>
-        <SectionLabel>Portfolio</SectionLabel>
+        <SectionLabel>Gallery</SectionLabel>
         <SectionTitle>
-          Selected<br />Works
+          Selected works
         </SectionTitle>
 
         <FiltersWrapper>
