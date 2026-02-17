@@ -1,6 +1,6 @@
 import { useState } from "react"
 import styled from "styled-components"
-import { X } from "lucide-react"
+import { Lightbox } from "./lightbox"
 
 const artworks = [
   {
@@ -165,72 +165,6 @@ const ArtworkCard = styled.div`
   }
 `
 
-// Lightbox styles
-const LightboxOverlay = styled.div`
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.95);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-`
-
-const LightboxContent = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 90vw;
-  max-height: 90vh;
-`
-
-const LightboxImage = styled.img`
-  max-width: 100%;
-  max-height: 70vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-`
-
-const LightboxInfo = styled.div`
-  margin-top: 1.5rem;
-  text-align: center;
-`
-
-const LightboxCategory = styled.p`
-  font-size: 0.875rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #c9a962;
-  margin-bottom: 0.5rem;
-`
-
-const LightboxTitle = styled.h3`
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
-  color: #f5f5f5;
-  font-weight: 400;
-`
-
-const CloseButton = styled.button`
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: none;
-  border: none;
-  color: #f5f5f5;
-  cursor: pointer;
-  padding: 0.5rem;
-  transition: color 0.3s;
-  z-index: 101;
-
-  &:hover {
-    color: #c9a962;
-  }
-`
-
 export function Portfolio() {
   const [selectedFilter, setSelectedFilter] = useState("all")
   const [lightboxImage, setLightboxImage] = useState(null)
@@ -291,23 +225,7 @@ export function Portfolio() {
       </Container>
 
       {lightboxImage && (
-        <LightboxOverlay onClick={closeLightbox}>
-          <CloseButton onClick={closeLightbox}>
-            <X size={32} />
-          </CloseButton>
-          <LightboxContent onClick={(e) => e.stopPropagation()}>
-            <LightboxImage
-              src={lightboxImage.image}
-              alt={lightboxImage.title}
-            />
-            <LightboxInfo>
-              <LightboxCategory>
-                {lightboxImage.medium} / {lightboxImage.category}
-              </LightboxCategory>
-              <LightboxTitle>{lightboxImage.title}</LightboxTitle>
-            </LightboxInfo>
-          </LightboxContent>
-        </LightboxOverlay>
+        <Lightbox artwork={lightboxImage} onClose={closeLightbox} />
       )}
     </Section>
   )
