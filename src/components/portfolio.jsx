@@ -192,11 +192,14 @@ export function Portfolio() {
     // If no filter is active, activate 'all':
     const hasActiveFilters = arrayUpdated.some(item => item.active && item.name !== "all")
 
-    const finalArray = hasActiveFilters
-      ? arrayUpdated
-      : arrayUpdated.map(item =>
+    let finalArray;
+    if (hasActiveFilters) {
+      finalArray = arrayUpdated
+    } else {
+      finalArray = arrayUpdated.map(item =>
         item.name === "all" ? { ...item, active: true } : item
       )
+    }
 
     console.log(',,, array actualizado:', finalArray)
     setSelectedFilter(finalArray)
