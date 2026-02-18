@@ -2,6 +2,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import { Lightbox } from "./lightbox"
 
+/* ,,, meter en un json: */
 const artworks = [
   {
     id: 1,
@@ -83,6 +84,9 @@ const FilterButton = styled.button`
   color: ${props => props.$active ? '#0a0a0a' : '#888888'};
   cursor: pointer;
   transition: all 0.3s;
+  ${props => props.$isAll && `
+    color: red;
+  `}
 
   &:hover {
     border-color: #c9a962;
@@ -215,21 +219,20 @@ export function Portfolio() {
         <SectionTitle>
           Selected works
         </SectionTitle>
-
-        <FiltersWrapper>
+        {/* ,,, borrar este div: */}
+        <div>
           {filterArray.map((filter) => (
-            <div key={filter.name}>
-              <pre key={filter.name}>
-                {JSON.stringify(filter, null, 2)}
-              </pre>
-            </div>
+            <pre key={filter.name}>
+              {JSON.stringify(filter, null, 2)}
+            </pre>
           ))}
-        </FiltersWrapper>
+        </div>
         <FiltersWrapper>
           {filterArray.map((filter) => (
             <FilterButton
               key={filter.name}
               $active={filter.active}
+              $isAll={filter.name === "all"}
               onClick={() => setFilters(filter.name)}
             >
               {filter.name}
