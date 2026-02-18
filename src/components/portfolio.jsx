@@ -178,30 +178,23 @@ export function Portfolio() {
 
   const setFilters = (filter) => {
     const arrayUpdated = filterArray.map((item) => {
+      // If "all" was clicked, deactivate the others
       if (filter === "all") {
-        return item.name === "all" ? { ...item, active: true } : { ...item, active: false }
+        return { ...item, active: item.name === "all" }
       }
+      // If clicked on another filter, deactivate "all":
       if (item.name === "all") {
         return { ...item, active: false }
       }
+      // Fiter toggle:
       if (item.name === filter) {
         return { ...item, active: !item.active }
       }
       return item
     })
-    // If no filter is active, activate 'all':
+    // If no filter is active, activate "all":
     const hasActiveFilters = arrayUpdated.some(item => item.active && item.name !== "all")
-
-    let finalArray;
-    if (hasActiveFilters) {
-      finalArray = arrayUpdated
-    } else {
-      finalArray = arrayUpdated.map(item =>
-        item.name === "all" ? { ...item, active: true } : item
-      )
-    }
-
-    console.log(',,, array actualizado:', finalArray)
+    const finalArray = hasActiveFilters ? arrayUpdated : arrayUpdated.map(item => ({ ...item, active: item.name === "all" }))
     setSelectedFilter(finalArray)
   }
 
