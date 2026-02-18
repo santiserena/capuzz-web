@@ -40,8 +40,6 @@ const artworks = [
   },
 ]
 
-const filters = ["all", "digital", "watercolor", "ink", "comic", "environment", "character", "cover"]
-
 const Section = styled.section`
   padding: 6rem 1.5rem;
 `
@@ -166,13 +164,43 @@ const ArtworkCard = styled.div`
 `
 
 export function Portfolio() {
-  const [selectedFilter, setSelectedFilter] = useState("all")
+  const [filterArray, setSelectedFilter] = useState([
+    { name: "all", active: true },
+    { name: "digital", active: false },
+    { name: "watercolor", active: false },
+    { name: "ink", active: false },
+    { name: "comic", active: false },
+    { name: "environment", active: false },
+    { name: "character", active: false },
+    { name: "cover", active: false },
+  ])
   const [lightboxImage, setLightboxImage] = useState(null)
 
-  const filteredArtworks = artworks.filter((artwork) => {
-    if (selectedFilter === "all") return true
-    return artwork.medium === selectedFilter || artwork.category === selectedFilter
-  })
+  const setFilters = (filter) => {
+    const arrayUpdated = filterArray.map((item) => {
+      if (filter === "all") {
+        return item.name === "all" ? { ...item, active: true } : { ...item, active: false }
+      }
+      if (item.name === "all") {
+        return { ...item, active: false }
+      }
+      if (item.name === filter) {
+        return { ...item, active: !item.active }
+      }
+      return item
+    })
+    // If no filter is active, activate 'all':
+    const hasActiveFilters = arrayUpdated.some(item => item.active && item.name !== "all")
+
+    const finalArray = hasActiveFilters
+      ? arrayUpdated
+      : arrayUpdated.map(item =>
+        item.name === "all" ? { ...item, active: true } : item
+      )
+
+    console.log(',,, array actualizado:', finalArray)
+    setSelectedFilter(finalArray)
+  }
 
   const openLightbox = (artwork) => {
     setLightboxImage(artwork)
@@ -193,18 +221,27 @@ export function Portfolio() {
         </SectionTitle>
 
         <FiltersWrapper>
-          {filters.map((filter) => (
+          {filterArray.map((filter) => (
+            <div key={filter.name}>
+              <pre key={filter.name}>
+                {JSON.stringify(filter, null, 2)}
+              </pre>
+            </div>
+          ))}
+        </FiltersWrapper>
+        <FiltersWrapper>
+          {filterArray.map((filter) => (
             <FilterButton
-              key={filter}
-              $active={selectedFilter === filter}
-              onClick={() => setSelectedFilter(filter)}
+              key={filter.name}
+              $active={filter.active}
+              onClick={() => setFilters(filter.name)}
             >
-              {filter}
+              {filter.name}
             </FilterButton>
           ))}
         </FiltersWrapper>
 
-        <GalleryGrid>
+        {/* <GalleryGrid>
           {filteredArtworks.map((artwork) => (
             <ArtworkCard
               key={artwork.id}
@@ -221,7 +258,7 @@ export function Portfolio() {
               </ArtworkContent>
             </ArtworkCard>
           ))}
-        </GalleryGrid>
+        </GalleryGrid> */}
       </Container>
 
       {lightboxImage && (
