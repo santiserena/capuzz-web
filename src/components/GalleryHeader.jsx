@@ -181,13 +181,13 @@ const ArtworkCard = styled.div`
 export function Portfolio() {
   const [filterArray, setSelectedFilter] = useState([
     { name: "all", active: true },
-    { name: "digital", active: false },
     { name: "watercolor", active: false },
     { name: "ink", active: false },
+    { name: "cover", active: false },
+    { name: "digital", active: false },
     { name: "comic", active: false },
     { name: "environment", active: false },
     { name: "character", active: false },
-    { name: "cover", active: false },
   ])
   const [lightboxImage, setLightboxImage] = useState(null)
 
@@ -231,9 +231,9 @@ export function Portfolio() {
           Selected works
         </SectionTitle>
         {/* ,,, borrar este div: */}
-        <pre>
+        {/* <pre>
           {JSON.stringify(filterArray, null, 2)}
-        </pre>
+        </pre> */}
         <FiltersWrapper>
           {filterArray.map((filter) => (
             <FilterButton

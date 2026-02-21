@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Header } from './components/header'
 import { Hero } from './components/hero'
-import { Portfolio } from './components/portfolio'
+import { GalleryHeader } from './components/GalleryHeader'
 import { About } from './components/about'
 import { Contact } from './components/contact'
 import { Footer } from './components/footer'
@@ -20,7 +20,7 @@ function App() {
         {/* quitar todos los divs ,,, */}
         <Hero />
         <div style={{ border: '1px solid blue' }}>
-          <Portfolio />
+          <GalleryHeader />
         </div>
         <div style={{ border: '1px solid green' }}>
           <About />
