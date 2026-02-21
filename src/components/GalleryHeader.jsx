@@ -178,7 +178,7 @@ const ArtworkCard = styled.div`
   }
 `
 
-export function Portfolio() {
+export function GalleryHeader() {
   const [filterArray, setSelectedFilter] = useState([
     { name: "all", active: true },
     { name: "watercolor", active: false },
