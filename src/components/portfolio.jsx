@@ -220,13 +220,9 @@ export function Portfolio() {
           Selected works
         </SectionTitle>
         {/* ,,, borrar este div: */}
-        <div>
-          {filterArray.map((filter) => (
-            <pre key={filter.name}>
-              {JSON.stringify(filter, null, 2)}
-            </pre>
-          ))}
-        </div>
+        <pre>
+          {JSON.stringify(filterArray, null, 2)}
+        </pre>
         <FiltersWrapper>
           {filterArray.map((filter) => (
             <FilterButton
