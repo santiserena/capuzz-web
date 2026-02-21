@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Lightbox } from "./Lightbox"
 import { Gallery } from './Gallery'
 
-/* ,,, meter en un json: */
+/* ,,, sacar todo esto y limpiar todo lo relacionado a Gallery: */
 const artworks = [
   {
     id: 1,
@@ -88,7 +88,7 @@ const FilterButton = styled.button`
   ${props => props.$isAll && `
     padding-left: 0.75rem;
     &::before {
-      content: '●';
+      content: '●'; /* ,,, importar iconos bien! */
       margin-right: 0.5rem;
       color: ${props.$active ? '#0a0a0a' : '#888888'};
       transition: color 0.3s;
@@ -178,7 +178,8 @@ const ArtworkCard = styled.div`
     transform: translateY(0);
   }
 `
-
+/* ,,, al seleccionar y desseleccionar, en dispositivos pequeños queda como si estuviera haciendo hover */
+/* ,,, en dispositivos pequeños, hacer que cada btn ocupe la mitad de la pantalla */
 export function GalleryHeader() {
   const [filterArray, setSelectedFilter] = useState([
     { name: "all", active: true },
