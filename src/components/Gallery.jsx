@@ -1,45 +1,44 @@
 import { useState } from "react"
 import styled from "styled-components"
 import { Lightbox } from "./Lightbox"
-import { Gallery } from './Gallery'
 
 /* ,,, meter en un json: */
 const artworks = [
-  {
-    id: 1,
-    title: "Tribute to Akira Toriyama",
-    image: "/images/p1.png",
-    medium: "ink",
-    category: "character",
-  },
-  {
-    id: 2,
-    title: "Tifa Lockhart",
-    image: "/images/p5.png",
-    medium: "watercolor",
-    category: "character",
-  },
-  {
-    id: 3,
-    title: "Frozen Discovery",
-    image: "/images/p6.png",
-    medium: "digital",
-    category: "environment",
-  },
-  {
-    id: 4,
-    title: "Among Us - Comic Cover",
-    image: "/images/p7.png",
-    medium: "comic",
-    category: "cover",
-  },
-  {
-    id: 5,
-    title: "Follow - Study",
-    image: "/images/p10.png",
-    medium: "ink",
-    category: "character",
-  },
+    {
+        id: 1,
+        title: "Tribute to Akira Toriyama",
+        image: "/images/p1.png",
+        medium: "ink",
+        category: "character",
+    },
+    {
+        id: 2,
+        title: "Tifa Lockhart",
+        image: "/images/p5.png",
+        medium: "watercolor",
+        category: "character",
+    },
+    {
+        id: 3,
+        title: "Frozen Discovery",
+        image: "/images/p6.png",
+        medium: "digital",
+        category: "environment",
+    },
+    {
+        id: 4,
+        title: "Among Us - Comic Cover",
+        image: "/images/p7.png",
+        medium: "comic",
+        category: "cover",
+    },
+    {
+        id: 5,
+        title: "Follow - Study",
+        image: "/images/p10.png",
+        medium: "ink",
+        category: "character",
+    },
 ]
 
 const Section = styled.section`
@@ -179,77 +178,68 @@ const ArtworkCard = styled.div`
   }
 `
 
-export function GalleryHeader() {
-  const [filterArray, setSelectedFilter] = useState([
-    { name: "all", active: true },
-    { name: "watercolor", active: false },
-    { name: "ink", active: false },
-    { name: "cover", active: false },
-    { name: "digital", active: false },
-    { name: "comic", active: false },
-    { name: "environment", active: false },
-    { name: "character", active: false },
-  ])
-  const [lightboxImage, setLightboxImage] = useState(null)
+export function Gallery() {
+    const [filterArray, setSelectedFilter] = useState([
+        { name: "all", active: true },
+        { name: "watercolor", active: false },
+        { name: "ink", active: false },
+        { name: "cover", active: false },
+        { name: "digital", active: false },
+        { name: "comic", active: false },
+        { name: "environment", active: false },
+        { name: "character", active: false },
+    ])
+    const [lightboxImage, setLightboxImage] = useState(null)
 
-  const setFilters = (filter) => {
-    const arrayUpdated = filterArray.map((item) => {
-      // If "all" was clicked, deactivate the others
-      if (filter === "all") {
-        return { ...item, active: item.name === "all" }
-      }
-      // If clicked on another filter, deactivate "all":
-      if (item.name === "all") {
-        return { ...item, active: false }
-      }
-      // Fiter toggle:
-      if (item.name === filter) {
-        return { ...item, active: !item.active }
-      }
-      return item
-    })
-    // If no filter is active, activate "all":
-    const hasActiveFilters = arrayUpdated.some(item => item.active && item.name !== "all")
-    const finalArray = hasActiveFilters ? arrayUpdated : arrayUpdated.map(item => ({ ...item, active: item.name === "all" }))
-    setSelectedFilter(finalArray)
-  }
+    const setFilters = (filter) => {
+        const arrayUpdated = filterArray.map((item) => {
+            // If "all" was clicked, deactivate the others
+            if (filter === "all") {
+                return { ...item, active: item.name === "all" }
+            }
+            // If clicked on another filter, deactivate "all":
+            if (item.name === "all") {
+                return { ...item, active: false }
+            }
+            // Fiter toggle:
+            if (item.name === filter) {
+                return { ...item, active: !item.active }
+            }
+            return item
+        })
+        // If no filter is active, activate "all":
+        const hasActiveFilters = arrayUpdated.some(item => item.active && item.name !== "all")
+        const finalArray = hasActiveFilters ? arrayUpdated : arrayUpdated.map(item => ({ ...item, active: item.name === "all" }))
+        setSelectedFilter(finalArray)
+    }
 
-  const openLightbox = (artwork) => {
-    setLightboxImage(artwork)
-    document.body.style.overflow = "hidden"
-  }
+    const openLightbox = (artwork) => {
+        setLightboxImage(artwork)
+        document.body.style.overflow = "hidden"
+    }
 
-  const closeLightbox = () => {
-    setLightboxImage(null)
-    document.body.style.overflow = "auto"
-  }
+    const closeLightbox = () => {
+        setLightboxImage(null)
+        document.body.style.overflow = "auto"
+    }
 
-  return (
-    <Section id="work">
-      <Container>
-        <SectionLabel>Gallery</SectionLabel>
-        <SectionTitle>
-          Selected works
-        </SectionTitle>
-        {/* ,,, borrar este div: */}
-        {/* <pre>
-          {JSON.stringify(filterArray, null, 2)}
-        </pre> */}
-        <FiltersWrapper>
-          {filterArray.map((filter) => (
-            <FilterButton
-              key={filter.name}
-              $active={filter.active}
-              $isAll={filter.name === "all"}
-              onClick={() => setFilters(filter.name)}
-            >
-              {filter.name}
-            </FilterButton>
-          ))}
-        </FiltersWrapper>
+    return (
+        <Section id="work">
+            <Container>
+                <FiltersWrapper>
+                    {filterArray.map((filter) => (
+                        <FilterButton
+                            key={filter.name}
+                            $active={filter.active}
+                            $isAll={filter.name === "all"}
+                            onClick={() => setFilters(filter.name)}
+                        >
+                            {filter.name}
+                        </FilterButton>
+                    ))}
+                </FiltersWrapper>
 
-        <Gallery />
-        {/* <GalleryGrid>
+                {/* <GalleryGrid>
           {filteredArtworks.map((artwork) => (
             <ArtworkCard
               key={artwork.id}
@@ -267,11 +257,11 @@ export function GalleryHeader() {
             </ArtworkCard>
           ))}
         </GalleryGrid> */}
-      </Container>
+            </Container>
 
-      {lightboxImage && (
-        <Lightbox artwork={lightboxImage} onClose={closeLightbox} />
-      )}
-    </Section>
-  )
+            {lightboxImage && (
+                <Lightbox artwork={lightboxImage} onClose={closeLightbox} />
+            )}
+        </Section>
+    )
 }
