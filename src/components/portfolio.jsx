@@ -85,7 +85,12 @@ const FilterButton = styled.button`
   cursor: pointer;
   transition: all 0.3s;
   ${props => props.$isAll && `
-    color: red;
+    padding-left: 0.75rem;
+    &::before {
+      content: '●';
+      margin-right: 0.5rem;
+      color: #888888;
+    }
   `}
 
   &:hover {
