@@ -89,13 +89,19 @@ const FilterButton = styled.button`
     &::before {
       content: '●';
       margin-right: 0.5rem;
-      color: #888888;
+      color: ${props.$active ? '#0a0a0a' : '#888888'};
+      transition: color 0.3s;
     }
   `}
 
   &:hover {
     border-color: #c9a962;
     color: ${props => props.$active ? '#0a0a0a' : '#c9a962'};
+    ${props => props.$isAll && !props.$active && `
+      &::before {
+        color: #c9a962;
+      }
+    `}
   }
 `
 
