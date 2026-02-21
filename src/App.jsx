@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { Header } from './components/header'
-import { Hero } from './components/hero'
+import { Header } from './components/Header'
+import { Hero } from './components/Hero'
 import { GalleryHeader } from './components/GalleryHeader'
-import { About } from './components/about'
-import { Contact } from './components/contact'
-import { Footer } from './components/footer'
+import { About } from './components/About'
+import { Contact } from './components/Contact'
+import { Footer } from './components/Footer'
 
 const Main = styled.main`
   min-height: 100vh;

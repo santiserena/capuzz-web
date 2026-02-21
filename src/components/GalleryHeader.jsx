@@ -1,6 +1,6 @@
 import { useState } from "react"
 import styled from "styled-components"
-import { Lightbox } from "./lightbox"
+import { Lightbox } from "./Lightbox"
 
 /* ,,, meter en un json: */
 const artworks = [
