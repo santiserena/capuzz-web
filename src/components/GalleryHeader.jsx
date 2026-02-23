@@ -95,14 +95,16 @@ const FilterButton = styled.button`
     }
   `}
 
-  &:hover {
-    border-color: #c9a962;
-    color: ${props => props.$active ? '#0a0a0a' : '#c9a962'};
-    ${props => props.$isAll && !props.$active && `
-      &::before {
-        color: #c9a962;
-      }
-    `}
+  @media (hover: hover) {
+    &:hover {
+      border-color: #c9a962;
+      color: ${props => props.$active ? '#0a0a0a' : '#c9a962'};
+      ${props => props.$isAll && !props.$active && `
+        &::before {
+          color: #c9a962;
+        }
+      `}
+    }
   }
 `
 
