@@ -45,6 +45,10 @@ const FilterButton = styled.button`
   color: ${(props) => (props.$active ? "#0a0a0a" : "#888888")};
   cursor: pointer;
   transition: all 0.3s;
+  width: calc(50% - 0.375rem);
+  @media (min-width: 768px) {
+    width: auto;
+  }
   ${props => props.$isAll && `
     padding-left: 0.75rem;
     &::before {
