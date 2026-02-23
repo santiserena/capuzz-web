@@ -33,6 +33,7 @@ const FiltersWrapper = styled.div`
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 3rem;
+  justify-content: center;
 `;
 
 const FilterButton = styled.button`
@@ -45,10 +46,10 @@ const FilterButton = styled.button`
   color: ${(props) => (props.$active ? "#0a0a0a" : "#888888")};
   cursor: pointer;
   transition: all 0.3s;
-  width: calc(50% - 0.375rem);
-  @media (min-width: 768px) {
-    width: auto;
-  }
+  
+  flex: 1;
+  max-width: 200px;
+  
   ${props => props.$isAll && `
     padding-left: 0.75rem;
     &::before {
@@ -71,6 +72,7 @@ const FilterButton = styled.button`
     }
   }
 `;
+
 /* ,,, en dispositivos pequeños, hacer que cada btn ocupe la mitad de la pantalla */
 export function GalleryHeader() {
   const [filterBtnsArray, setFilterBtnsArray] = useState([
