@@ -48,7 +48,10 @@ const FilterButton = styled.button`
   transition: all 0.3s;
   
   flex: 1;
-  max-width: 200px;
+  @media (max-width: 935px) {
+    background-color: red;
+    flex: 0 0 46%;
+  }
   
   ${props => props.$isAll && `
     padding-left: 0.75rem;
