@@ -51,7 +51,7 @@ const FilterButton = styled.button`
     flex: 0 0 47%;
   }
   @media (max-width: 364px) {
-    flex: 0 0 97%;
+    flex: 0 0 96%;
   }
   ${(props) =>
     props.$isAll &&
