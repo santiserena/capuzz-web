@@ -46,19 +46,21 @@ const FilterButton = styled.button`
   color: ${(props) => (props.$active ? "#0a0a0a" : "#888888")};
   cursor: pointer;
   transition: all 0.3s;
-  
   flex: 1;
   @media (max-width: 935px) {
-    background-color: red;
-    flex: 0 0 46%;
+    flex: 0 0 47%;
   }
-  
-  ${props => props.$isAll && `
+  @media (max-width: 364px) {
+    flex: 0 0 97%;
+  }
+  ${(props) =>
+    props.$isAll &&
+    `
     padding-left: 0.75rem;
     &::before {
       content: '●'; /* ,,, importar iconos bien! */
       margin-right: 0.5rem;
-      color: ${props.$active ? '#0a0a0a' : '#888888'};
+      color: ${props.$active ? "#0a0a0a" : "#888888"};
       transition: color 0.3s;
     }
   `}
@@ -66,8 +68,11 @@ const FilterButton = styled.button`
   @media (hover: hover) {
     &:hover {
       border-color: #c9a962;
-      color: ${props => props.$active ? '#0a0a0a' : '#c9a962'};
-      ${props => props.$isAll && !props.$active && `
+      color: ${(props) => (props.$active ? "#0a0a0a" : "#c9a962")};
+      ${(props) =>
+        props.$isAll &&
+        !props.$active &&
+        `
         &::before {
           color: #c9a962;
         }
@@ -83,8 +88,6 @@ export function GalleryHeader() {
     { name: "watercolor", active: false },
     { name: "ink", active: false },
     { name: "cover", active: false },
-    { name: "digital", active: false },
-    { name: "comic", active: false },
     { name: "environment", active: false },
     { name: "character", active: false },
   ]);
@@ -106,10 +109,14 @@ export function GalleryHeader() {
       return item;
     });
     // If no filter is active, activate "all":
-    const hasActiveFilters = arrayUpdated.some(item => item.active && item.name !== "all")
-    const finalArray = hasActiveFilters ? arrayUpdated : arrayUpdated.map(item => ({ ...item, active: item.name === "all" }))
-    setFilterBtnsArray(finalArray)
-  }
+    const hasActiveFilters = arrayUpdated.some(
+      (item) => item.active && item.name !== "all",
+    );
+    const finalArray = hasActiveFilters
+      ? arrayUpdated
+      : arrayUpdated.map((item) => ({ ...item, active: item.name === "all" }));
+    setFilterBtnsArray(finalArray);
+  };
 
   return (
     <Section id="work">
