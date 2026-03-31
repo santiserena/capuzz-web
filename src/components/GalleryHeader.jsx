@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Gallery } from "./Gallery";
+import { Menu } from "lucide-react";
 
 const Section = styled.section`
   padding: 6rem 1.5rem;
@@ -53,17 +54,6 @@ const FilterButton = styled.button`
   @media (max-width: 364px) {
     flex: 0 0 96%;
   }
-  ${(props) =>
-    props.$isAll &&
-    `
-    padding-left: 0.75rem;
-    &::before {
-      content: '●'; /* ,,, importar iconos bien! */
-      margin-right: 0.5rem;
-      color: ${props.$active ? "#0a0a0a" : "#888888"};
-      transition: color 0.3s;
-    }
-  `}
 
   @media (hover: hover) {
     &:hover {
@@ -131,7 +121,16 @@ export function GalleryHeader() {
               $isAll={filter.name === "all"}
               onClick={() => setFilters(filter.name)}
             >
-              {filter.name}
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.4rem",
+                }}
+              >
+                {filter.name === "all" && <Menu size={14} />}
+                {filter.name}
+              </span>
             </FilterButton>
           ))}
         </FiltersWrapper>
