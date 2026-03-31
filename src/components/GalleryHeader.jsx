@@ -118,7 +118,7 @@ export function GalleryHeader() {
             </FilterButton>
           ))}
         </FiltersWrapper>
-        <Gallery />
+        <Gallery filters={filterBtnsArray} />
       </Container>
     </Section>
   );
