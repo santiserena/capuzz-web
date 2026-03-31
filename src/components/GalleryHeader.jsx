@@ -71,6 +71,12 @@ const FilterButton = styled.button`
   }
 `;
 
+const FilterButtonContent = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+`;
+
 /* ,,, en dispositivos pequeños, hacer que cada btn ocupe la mitad de la pantalla */
 export function GalleryHeader() {
   const [filterBtnsArray, setFilterBtnsArray] = useState([
@@ -121,16 +127,10 @@ export function GalleryHeader() {
               $isAll={filter.name === "all"}
               onClick={() => setFilters(filter.name)}
             >
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.4rem",
-                }}
-              >
+              <FilterButtonContent>
                 {filter.name === "all" && <Menu size={14} />}
                 {filter.name}
-              </span>
+              </FilterButtonContent>
             </FilterButton>
           ))}
         </FiltersWrapper>
