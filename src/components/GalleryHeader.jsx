@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Gallery } from "./Gallery";
 import { LayoutGrid } from "lucide-react";
+import { FILTERS } from "../lib/data";
 
 const Section = styled.section`
   padding: 6rem 1.5rem;
@@ -70,14 +71,7 @@ const FilterButtonContent = styled.span`
 `;
 
 export function GalleryHeader() {
-  const [filterBtnsArray, setFilterBtnsArray] = useState([
-    { name: "all", active: true },
-    { name: "watercolor", active: false },
-    { name: "ink", active: false },
-    { name: "cover", active: false },
-    { name: "environment", active: false },
-    { name: "character", active: false },
-  ]);
+  const [filterBtnsArray, setFilterBtnsArray] = useState(FILTERS);
 
   const setFilters = (filter) => {
     const arrayUpdated = filterBtnsArray.map((item) => {
@@ -124,7 +118,6 @@ export function GalleryHeader() {
             </FilterButton>
           ))}
         </FiltersWrapper>
-
         <Gallery />
       </Container>
     </Section>
