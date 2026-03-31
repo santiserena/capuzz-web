@@ -59,14 +59,6 @@ const FilterButton = styled.button`
     &:hover {
       border-color: #c9a962;
       color: ${(props) => (props.$active ? "#0a0a0a" : "#c9a962")};
-      ${(props) =>
-        props.$isAll &&
-        !props.$active &&
-        `
-        &::before {
-          color: #c9a962;
-        }
-      `}
     }
   }
 `;
@@ -77,7 +69,6 @@ const FilterButtonContent = styled.span`
   gap: 0.4rem;
 `;
 
-/* ,,, en dispositivos pequeños, hacer que cada btn ocupe la mitad de la pantalla */
 export function GalleryHeader() {
   const [filterBtnsArray, setFilterBtnsArray] = useState([
     { name: "all", active: true },
@@ -124,7 +115,6 @@ export function GalleryHeader() {
             <FilterButton
               key={filter.name}
               $active={filter.active}
-              $isAll={filter.name === "all"}
               onClick={() => setFilters(filter.name)}
             >
               <FilterButtonContent>
