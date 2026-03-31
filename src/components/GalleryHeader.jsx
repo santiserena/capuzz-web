@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Gallery } from "./Gallery";
-import { Menu } from "lucide-react";
+import { LayoutGrid } from "lucide-react";
 
 const Section = styled.section`
   padding: 6rem 1.5rem;
@@ -128,7 +128,7 @@ export function GalleryHeader() {
               onClick={() => setFilters(filter.name)}
             >
               <FilterButtonContent>
-                {filter.name === "all" && <Menu size={14} />}
+                {filter.name === "all" && <LayoutGrid size={14} />}
                 {filter.name}
               </FilterButtonContent>
             </FilterButton>
