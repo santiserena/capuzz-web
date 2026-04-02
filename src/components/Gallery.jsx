@@ -50,6 +50,15 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
+const NoItemsMsg = styled.p`
+  color: #888;
+  text-align: center;
+
+  font-size: 1.25rem;
+  margin: -2rem auto 3rem;
+  line-height: 1.7;
+`;
+
 const GalleryGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -153,9 +162,9 @@ export function Gallery({ filters }) {
   return (
     <Section id="work">
       <Container>
-        <h1>,,, filtros:{JSON.stringify(filters, null, 2)}</h1>
-        <h1>________________________________</h1>
-        <h1>,,, dibujos:{JSON.stringify(artworks, null, 2)}</h1>
+        {filtered.length == 0 && (
+          <NoItemsMsg>This path reveals nothing… yet.</NoItemsMsg>
+        )}
         <GalleryGrid>
           {filtered.map((artwork) => (
             <ArtworkCard key={artwork.id} onClick={() => openLightbox(artwork)}>
