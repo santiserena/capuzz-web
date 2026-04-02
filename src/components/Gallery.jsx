@@ -9,35 +9,35 @@ const artworks = [
     title: "Tribute to Akira Toriyama",
     image: "/images/p1.png",
     medium: "ink",
-    category: "character",
+    category: ["character"],
   },
   {
     id: 2,
     title: "Tifa Lockhart",
     image: "/images/p5.png",
     medium: "watercolor",
-    category: "character",
+    category: ["character"],
   },
   {
     id: 3,
     title: "Frozen Discovery",
     image: "/images/p6.png",
     medium: "digital",
-    category: "environment",
+    category: ["environment", "watercolor"],
   },
   {
     id: 4,
     title: "Among Us - Comic Cover",
     image: "/images/p7.png",
     medium: "comic",
-    category: "cover",
+    category: ["cover"],
   },
   {
     id: 5,
     title: "Follow - Study",
     image: "/images/p10.png",
     medium: "ink",
-    category: "character",
+    category: ["character"],
   },
 ];
 
@@ -146,7 +146,7 @@ export function Gallery({ filters }) {
       return artworks;
     }
     return artworks.filter((artwork) =>
-      filters.some((el) => el.active && el.name === artwork.category),
+      filters.some((el) => el.active && artwork.category.includes(el.name)),
     );
   }, [filters]);
 
