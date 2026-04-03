@@ -12,18 +12,11 @@ const Overlay = styled.div`
   padding: 1rem;
 `
 
-const Content = styled.div`
+const Image = styled.img`
+  display: block;
   position: relative;
   max-width: 92vw;
   max-height: 92vh;
-`
-
-const Image = styled.img`
-  display: block;
-  max-width: 100%;
-  max-height: 92vh;
-  width: auto;
-  height: auto;
   object-fit: contain;
 `
 
@@ -70,25 +63,18 @@ const CloseButton = styled.button`
 `
 
 export function Lightbox({ artwork, onClose }) {
-    if (!artwork) return null
-
-    return (
-        <Overlay onClick={onClose}>
-            <CloseButton onClick={onClose}>
-                <X size={32} />
-            </CloseButton>
-            <Content onClick={(e) => e.stopPropagation()}>
-                <Image
-                    src={artwork.image}
-                    alt={artwork.title}
-                />
-                <Info>
-                    <Category>
-                        {artwork.medium} / {artwork.category}
-                    </Category>
-                    <Title>{artwork.title}</Title>
-                </Info>
-            </Content>
-        </Overlay>
-    )
+  return (
+    <Overlay onClick={onClose}>
+      <CloseButton onClick={onClose}>
+        <X size={32} />
+      </CloseButton>
+      <span onClick={(e) => e.stopPropagation()}>
+        <Image src={artwork.image} alt={artwork.title} />
+        <Info>
+          <Category>{artwork.medium} / {artwork.category}</Category>
+          <Title>{artwork.title}</Title>
+        </Info>
+      </span>
+    </Overlay>
+  )
 }
