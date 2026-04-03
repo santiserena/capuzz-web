@@ -18,11 +18,14 @@ const Image = styled.img`
   max-height: 85vh;
   object-fit: contain;
   margin-bottom: 3em;
+   @media (max-width: 768px) {
+    max-height: 75vh;
+  }
 `;
 
 const Info = styled.div`
   position: fixed;
-  bottom: 1.25rem;
+  bottom: 1rem;
   left: 0;
   right: 0;
   display: flex;
@@ -30,7 +33,6 @@ const Info = styled.div`
   align-items: baseline;
   gap: 1rem;
   z-index: 101;
-
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
