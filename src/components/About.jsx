@@ -28,7 +28,6 @@ const Container = styled.div`
     align-items: stretch;
   }
 `;
-/* ,,, borrar imagen que no sirve */
 
 const ImageWrapper = styled.div`
   position: relative;
@@ -101,6 +100,23 @@ const TitleGold = styled.span`
   color: #c9a962;
 `;
 
+const TitleWrapper = styled.div`
+  &.mobile {
+    display: block;
+    margin-bottom: -2rem; /* Reduce background gap to keep 2rem distance */
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &.desktop {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+`;
+
 const TextBlock = styled.div`
   margin-bottom: 2.5rem;
 `;
@@ -144,9 +160,21 @@ const SpecTag = styled.span`
 `;
 
 export function About() {
+  const HeaderContent = (
+    <>
+      <SectionLabel>About the Artist</SectionLabel>
+      <SectionTitle>
+        <TitleWhite>Crafting Worlds</TitleWhite>
+        <br />
+        <TitleGold>Through Art</TitleGold>
+      </SectionTitle>
+    </>
+  );
+
   return (
     <Section id="about">
       <Container>
+        <TitleWrapper className="mobile">{HeaderContent}</TitleWrapper>
         <ImageWrapper>
           <ImageContainer>
             <AboutImage src="/images/p11.png" alt="Artist at work" />
@@ -158,12 +186,7 @@ export function About() {
         </ImageWrapper>
 
         <ContentWrapper>
-          <SectionLabel>About the Artist</SectionLabel>
-          <SectionTitle>
-            <TitleWhite>Crafting Worlds</TitleWhite>
-            <br />
-            <TitleGold>Through Art</TitleGold>
-          </SectionTitle>
+          <TitleWrapper className="desktop">{HeaderContent}</TitleWrapper>
 
           <TextBlock>
             <Paragraph>
