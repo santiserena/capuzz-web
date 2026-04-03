@@ -72,7 +72,7 @@ const CloseButton = styled.button`
 
 export function Lightbox({ artwork, onClose }) {
   return (
-    <Overlay onClick={onClose}>
+    <Overlay>
       <CloseButton onClick={onClose}>
         <X size={32} />
       </CloseButton>
