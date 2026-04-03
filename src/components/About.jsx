@@ -25,13 +25,15 @@ const Container = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
   }
 `;
+/* ,,, borrar imagen que no sirve */
 
 const ImageWrapper = styled.div`
   position: relative;
   flex: 1;
+  display: flex;
 `;
 
 const ImageContainer = styled.div`
@@ -39,12 +41,14 @@ const ImageContainer = styled.div`
   aspect-ratio: 4 / 5;
   border: 1px solid #2a2a2a;
   overflow: hidden;
+  width: 100%;
 `;
 
 const AboutImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: left center;
 `;
 
 const StatsOverlay = styled.div`
@@ -145,7 +149,7 @@ export function About() {
       <Container>
         <ImageWrapper>
           <ImageContainer>
-            <AboutImage src="/images/p10.png" alt="Artist at work" />
+            <AboutImage src="/images/p11.png" alt="Artist at work" />
           </ImageContainer>
           <StatsOverlay>
             <StatsNumber>10+</StatsNumber>
