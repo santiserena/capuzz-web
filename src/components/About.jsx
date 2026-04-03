@@ -23,7 +23,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 4rem;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     flex-direction: row;
     align-items: center;
   }
