@@ -47,6 +47,7 @@ const Info = styled.div`
   @media (max-width: 767px) {
     flex-direction: column-reverse;
     align-items: center;
+    gap: 0rem;
   }
 `
 
@@ -67,6 +68,7 @@ export function Lightbox({ artwork, onClose }) {
   return (
     <Overlay onClick={onClose}>
       <CloseButton onClick={onClose}><X size={32} /></CloseButton>
+      {/* ,,, ver q es stopPropagation */}
       <Image src={artwork.image} alt={artwork.title} onClick={(e) => e.stopPropagation()} />
       <Info onClick={(e) => e.stopPropagation()}>
         <span>{artwork.medium} / {artwork.category}</span>
