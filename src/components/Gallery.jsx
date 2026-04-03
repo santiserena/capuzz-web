@@ -128,7 +128,7 @@ const ArtworkShade = styled.div`
   opacity: 0;
   transition: opacity 0.3s;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     opacity: 1;
   }
 `;
@@ -156,7 +156,7 @@ const ArtworkContent = styled.div`
   transform: translateY(100%);
   transition: transform 0.3s;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     transform: translateY(0);
     transition: none;
   }
