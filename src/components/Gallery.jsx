@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import styled from "styled-components";
 import { Lightbox } from "./Lightbox";
+import { ChevronDown } from "lucide-react";
 
 /* ,,, ver si meter en un json: */
 const artworks = [
@@ -171,6 +172,42 @@ const ArtworkCard = styled.div`
   }
 `;
 
+const Scroll = styled.a`
+  margin-top: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    color: #c9a962;
+  }
+  span {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+  }
+`;
+
+const ScrollIcon = styled(ChevronDown)`
+  width: 1.25rem;
+  height: 1.25rem;
+  animation: bounce 1.5s infinite;
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
+`;
+
 export function Gallery({ filters }) {
   const [lightboxImage, setLightboxImage] = useState(null);
 
@@ -214,7 +251,10 @@ export function Gallery({ filters }) {
           ))}
         </GalleryGrid>
       </Container>
-
+      <Scroll>
+        <span>LOAD MORE</span>
+        <ScrollIcon />
+      </Scroll>
       {lightboxImage && (
         <Lightbox artwork={lightboxImage} onClose={closeLightbox} />
       )}
