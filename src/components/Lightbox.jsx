@@ -9,28 +9,31 @@ const Overlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
 `
 
 const Content = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 92vw;
+  max-height: 92vh;
 `
 
 const Image = styled.img`
+  display: block;
   max-width: 100%;
-  max-height: 70vh;
+  max-height: 92vh;
   width: auto;
   height: auto;
   object-fit: contain;
 `
 
 const Info = styled.div`
-  margin-top: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.5rem 1.25rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
   text-align: center;
 `
 
