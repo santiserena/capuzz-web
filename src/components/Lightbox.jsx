@@ -36,11 +36,12 @@ const Info = styled.div`
     gap: 0rem;
   }
 `;
-const MediumText = styled.div`
-  font-size: 0.875rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #c9a962;
+
+const TitleText = styled.div`
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: #f5f5f5;
+  font-weight: 400;
 
   @media (max-width: 767px) {
     flex-direction: column-reverse;
@@ -49,11 +50,11 @@ const MediumText = styled.div`
   }
 `;
 
-const TitleText = styled.div`
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
-  color: #f5f5f5;
-  font-weight: 400;
+const MediumText = styled.div`
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a962;
 
   @media (max-width: 767px) {
     flex-direction: column-reverse;
