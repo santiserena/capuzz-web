@@ -2,38 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import styled from "styled-components";
 import { Lightbox } from "./Lightbox";
 import { ChevronDown } from "lucide-react";
-
-/* ,,, ver si meter en un json: */
-const artworks = [
-  {
-    id: 1,
-    title: "Man looking at grave",
-    image: "https://res.cloudinary.com/dmig1qslw/image/upload/v1775234219/1_qttkmw.png",
-    medium: "pencil",
-    category: ["character"],
-  },
-  {
-    id: 2,
-    title: "Astronaut",
-    image: "https://res.cloudinary.com/dmig1qslw/image/upload/v1775234220/2_hyshmk.png",
-    medium: "color",
-    category: ["character", "cover", "ink"],
-  },
-  {
-    id: 3,
-    title: "Frozen Discovery",
-    image: "https://res.cloudinary.com/dmig1qslw/image/upload/v1775234219/3_l7v1zk.png",
-    medium: "digital",
-    category: ["character", "environment"],
-  },
-  {
-    id: 4,
-    title: "Tifa",
-    image: "https://res.cloudinary.com/dmig1qslw/image/upload/v1775234219/4_bkpnhq.png",
-    medium: "watercolor",
-    category: ["character"],
-  },
-];
+import { IMAGES } from "../lib/data";
 
 const Section = styled.section`
   padding: 4rem 1.5rem;
@@ -181,9 +150,9 @@ export function Gallery({ filters }) {
 
   const allFiltered = useMemo(() => {
     if (filters.some((el) => el.name === "all" && el.active)) {
-      return artworks;
+      return IMAGES;
     }
-    return artworks.filter((artwork) =>
+    return IMAGES.filter((artwork) =>
       filters.some((el) => el.active && artwork.category.includes(el.name)),
     );
   }, [filters]);
