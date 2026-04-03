@@ -39,6 +39,41 @@ const artworks = [
     medium: "ink",
     category: ["character"],
   },
+  {
+    id: 6,
+    title: "Tribute to Akira Toriyama",
+    image: "/images/p1.png",
+    medium: "ink",
+    category: ["character"],
+  },
+  {
+    id: 7,
+    title: "Tifa Lockhart",
+    image: "/images/p5.png",
+    medium: "watercolor",
+    category: ["character"],
+  },
+  {
+    id: 8,
+    title: "Frozen Discovery",
+    image: "/images/p6.png",
+    medium: "digital",
+    category: ["environment", "watercolor"],
+  },
+  {
+    id: 9,
+    title: "Among Us - Comic Cover",
+    image: "/images/p7.png",
+    medium: "comic",
+    category: ["cover"],
+  },
+  {
+    id: 10,
+    title: "Follow - Study",
+    image: "/images/p10.png",
+    medium: "ink",
+    category: ["character"],
+  },
 ];
 
 const Section = styled.section`
@@ -53,7 +88,6 @@ const Container = styled.div`
 const NoItemsMsg = styled.p`
   color: #888;
   text-align: center;
-
   font-size: 1.25rem;
   margin: -2rem auto 3rem;
   line-height: 1.7;
