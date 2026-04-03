@@ -169,16 +169,18 @@ const ArtworkCard = styled.div`
   background-color: #111111;
   cursor: pointer;
 
-  &:hover ${ArtworkImage} {
-    transform: scale(1.05);
-  }
+  @media (min-width: 1025px) {
+    &:hover ${ArtworkImage} {
+      transform: scale(1.05);
+    }
 
-  &:hover ${ArtworkShade} {
-    opacity: 1;
-  }
+    &:hover ${ArtworkShade} {
+      opacity: 1;
+    }
 
-  &:hover ${ArtworkContent} {
-    transform: translateY(0);
+    &:hover ${ArtworkContent} {
+      transform: translateY(0);
+    }
   }
 `;
 
