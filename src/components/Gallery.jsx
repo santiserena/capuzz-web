@@ -220,16 +220,16 @@ export function Gallery({ filters }) {
     document.body.style.overflow = "auto";
   };
 
-  const filtered = useMemo(() => {
+  const allFiltered = useMemo(() => {
     if (filters.some((el) => el.name === "all" && el.active)) {
-      return artworks.slice(0, visibleCount);
+      return artworks;
     }
-    return artworks
-      .filter((artwork) =>
-        filters.some((el) => el.active && artwork.category.includes(el.name)),
-      )
-      .slice(0, visibleCount);
-  }, [filters, visibleCount]);
+    return artworks.filter((artwork) =>
+      filters.some((el) => el.active && artwork.category.includes(el.name)),
+    );
+  }, [filters]);
+
+  const filtered = allFiltered.slice(0, visibleCount);
 
   useEffect(() => {
     setVisibleCount(6);
@@ -256,7 +256,7 @@ export function Gallery({ filters }) {
           ))}
         </GalleryGrid>
       </Container>
-      {visibleCount < artworks.length && filtered.length !== 0 && (
+      {visibleCount < allFiltered.length && filtered.length !== 0 && (
         <LoadMoreBtn onClick={() => setVisibleCount(visibleCount + 4)}>
           <span>LOAD MORE</span>
           <LoadMoreIcon />
