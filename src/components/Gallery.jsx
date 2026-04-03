@@ -207,6 +207,7 @@ const LoadMoreIcon = styled(ChevronDown)`
 `;
 
 export function Gallery({ filters }) {
+  const [visibleCount, setVisibleCount] = useState(4); // ,,, modificar
   const [lightboxImage, setLightboxImage] = useState(null);
 
   const openLightbox = (artwork) => {
@@ -221,12 +222,14 @@ export function Gallery({ filters }) {
 
   const filtered = useMemo(() => {
     if (filters.some((el) => el.name === "all" && el.active)) {
-      return artworks;
+      return artworks.slice(0, visibleCount);
     }
-    return artworks.filter((artwork) =>
-      filters.some((el) => el.active && artwork.category.includes(el.name)),
-    );
-  }, [filters]);
+    return artworks
+      .filter((artwork) =>
+        filters.some((el) => el.active && artwork.category.includes(el.name)),
+      )
+      .slice(0, visibleCount);
+  }, [filters, visibleCount]);
 
   return (
     <Section id="work">
@@ -249,7 +252,8 @@ export function Gallery({ filters }) {
           ))}
         </GalleryGrid>
       </Container>
-      <LoadMoreBtn>
+      {/* ,,, modificar a lo correcto */}
+      <LoadMoreBtn onClick={() => setVisibleCount(visibleCount + 2)}>
         <span>LOAD MORE</span>
         <LoadMoreIcon />
       </LoadMoreBtn>
