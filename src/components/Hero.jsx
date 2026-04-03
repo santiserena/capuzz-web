@@ -77,8 +77,6 @@ const Button = styled.a`
 
 const Scroll = styled.a`
   margin-top: 2.5rem;
-  background: none;
-  border: none;
   cursor: pointer;
   color: #888;
   transition: color 0.3s;

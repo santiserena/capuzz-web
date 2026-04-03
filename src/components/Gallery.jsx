@@ -172,10 +172,8 @@ const ArtworkCard = styled.div`
   }
 `;
 
-const Scroll = styled.a`
+const LoadMoreBtn = styled.a`
   margin-top: 2.5rem;
-  background: none;
-  border: none;
   cursor: pointer;
   color: #888;
   transition: color 0.3s;
@@ -193,7 +191,7 @@ const Scroll = styled.a`
   }
 `;
 
-const ScrollIcon = styled(ChevronDown)`
+const LoadMoreIcon = styled(ChevronDown)`
   width: 1.25rem;
   height: 1.25rem;
   animation: bounce 1.5s infinite;
@@ -251,10 +249,10 @@ export function Gallery({ filters }) {
           ))}
         </GalleryGrid>
       </Container>
-      <Scroll>
+      <LoadMoreBtn>
         <span>LOAD MORE</span>
-        <ScrollIcon />
-      </Scroll>
+        <LoadMoreIcon />
+      </LoadMoreBtn>
       {lightboxImage && (
         <Lightbox artwork={lightboxImage} onClose={closeLightbox} />
       )}
