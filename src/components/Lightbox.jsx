@@ -18,7 +18,7 @@ const Image = styled.img`
   max-height: 85vh;
   object-fit: contain;
   margin-bottom: 3em;
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     max-height: 75vh;
   }
 `;
@@ -45,12 +45,6 @@ const TitleText = styled.div`
   font-size: 1.75rem;
   color: #f5f5f5;
   font-weight: 400;
-
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 0rem;
-  }
 `;
 
 const MediumText = styled.div`
@@ -58,12 +52,6 @@ const MediumText = styled.div`
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #c9a962;
-
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 0rem;
-  }
 `;
 
 const CloseButton = styled.button`
@@ -73,6 +61,7 @@ const CloseButton = styled.button`
   background: none;
   border: none;
   color: #f5f5f5;
+  cursor: pointer;
   padding: 0.5rem;
   transition: color 0.3s;
   z-index: 101;
@@ -83,7 +72,7 @@ const CloseButton = styled.button`
 
 export function Lightbox({ artwork, onClose }) {
   return (
-    <Overlay>
+    <Overlay onClick={onClose}>
       <CloseButton onClick={onClose}>
         <X size={32} />
       </CloseButton>
