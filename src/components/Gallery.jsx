@@ -207,7 +207,7 @@ const LoadMoreIcon = styled(ChevronDown)`
 `;
 
 export function Gallery({ filters }) {
-  const [visibleCount, setVisibleCount] = useState(4); // ,,, modificar
+  const [visibleCount, setVisibleCount] = useState(6);
   const [lightboxImage, setLightboxImage] = useState(null);
 
   const openLightbox = (artwork) => {
@@ -252,11 +252,12 @@ export function Gallery({ filters }) {
           ))}
         </GalleryGrid>
       </Container>
-      {/* ,,, modificar a lo correcto */}
-      <LoadMoreBtn onClick={() => setVisibleCount(visibleCount + 2)}>
-        <span>LOAD MORE</span>
-        <LoadMoreIcon />
-      </LoadMoreBtn>
+      {visibleCount < artworks.length && (
+        <LoadMoreBtn onClick={() => setVisibleCount(visibleCount + 4)}>
+          <span>LOAD MORE</span>
+          <LoadMoreIcon />
+        </LoadMoreBtn>
+      )}
       {lightboxImage && (
         <Lightbox artwork={lightboxImage} onClose={closeLightbox} />
       )}
