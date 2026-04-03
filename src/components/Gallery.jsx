@@ -210,16 +210,6 @@ export function Gallery({ filters }) {
   const [visibleCount, setVisibleCount] = useState(6);
   const [lightboxImage, setLightboxImage] = useState(null);
 
-  const openLightbox = (artwork) => {
-    setLightboxImage(artwork);
-    document.body.style.overflow = "hidden";
-  };
-
-  const closeLightbox = () => {
-    setLightboxImage(null);
-    document.body.style.overflow = "auto";
-  };
-
   const allFiltered = useMemo(() => {
     if (filters.some((el) => el.name === "all" && el.active)) {
       return artworks;
@@ -234,6 +224,16 @@ export function Gallery({ filters }) {
   useEffect(() => {
     setVisibleCount(6);
   }, [filters]);
+
+  const openLightbox = (artwork) => {
+    setLightboxImage(artwork);
+    document.documentElement.style.overflow = "hidden";
+  };
+
+  const closeLightbox = () => {
+    setLightboxImage(null);
+    document.documentElement.style.overflow = "auto";
+  };
 
   return (
     <Section id="work">
