@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { X } from "lucide-react";
 
+/* ,,, ver si poner algo para zoom */
 const Overlay = styled.div`
   position: fixed;
   inset: 0;
@@ -30,7 +31,7 @@ const Info = styled.div`
   gap: 1rem;
   z-index: 101;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
     gap: 0rem;
@@ -43,7 +44,7 @@ const TitleText = styled.div`
   color: #f5f5f5;
   font-weight: 400;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     flex-direction: column-reverse;
     align-items: center;
     gap: 0rem;
@@ -56,7 +57,7 @@ const MediumText = styled.div`
   text-transform: uppercase;
   color: #c9a962;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     flex-direction: column-reverse;
     align-items: center;
     gap: 0rem;

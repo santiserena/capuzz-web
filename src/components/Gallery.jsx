@@ -127,6 +127,10 @@ const ArtworkShade = styled.div`
   );
   opacity: 0;
   transition: opacity 0.3s;
+
+  @media (max-width: 768px) {
+    opacity: 1;
+  }
 `;
 
 const ArtworkTitle = styled.h3`
@@ -151,6 +155,11 @@ const ArtworkContent = styled.div`
   padding: 1.5rem;
   transform: translateY(100%);
   transition: transform 0.3s;
+
+  @media (max-width: 768px) {
+    transform: translateY(0);
+    transition: none;
+  }
 `;
 
 const ArtworkCard = styled.div`
@@ -249,9 +258,7 @@ export function Gallery({ filters }) {
               <ArtworkShade />
               <ArtworkContent>
                 <ArtworkTitle>{artwork.title}</ArtworkTitle>
-                <ArtworkMeta>
-                  {artwork.medium}
-                </ArtworkMeta>
+                <ArtworkMeta>{artwork.medium}</ArtworkMeta>
               </ArtworkContent>
             </ArtworkCard>
           ))}
