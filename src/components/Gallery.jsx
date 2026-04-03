@@ -9,6 +9,7 @@ const artworks = [
     id: 1,
     title: "Tribute to Akira Toriyama",
     image: "/images/p1.png",
+    /* ,,, tecnica usada: */
     medium: "ink",
     category: ["character"],
   },
@@ -115,7 +116,7 @@ const ArtworkImage = styled.img`
   transition: transform 0.5s;
 `;
 
-const ArtworkOverlay = styled.div`
+const ArtworkShade = styled.div`
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -163,7 +164,7 @@ const ArtworkCard = styled.div`
     transform: scale(1.05);
   }
 
-  &:hover ${ArtworkOverlay} {
+  &:hover ${ArtworkShade} {
     opacity: 1;
   }
 
@@ -245,7 +246,7 @@ export function Gallery({ filters }) {
           {filtered.map((artwork) => (
             <ArtworkCard key={artwork.id} onClick={() => openLightbox(artwork)}>
               <ArtworkImage src={artwork.image} alt={artwork.title} />
-              <ArtworkOverlay />
+              <ArtworkShade />
               <ArtworkContent>
                 <ArtworkTitle>{artwork.title}</ArtworkTitle>
                 <ArtworkMeta>
