@@ -19,16 +19,17 @@ const Section = styled.section`
 const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
-`
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 4rem;
-  align-items: center;
 
   @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    align-items: center;
+    & > div {
+      flex: 1;
+      min-width: 0;
+    }
   }
 `
 
@@ -144,7 +145,6 @@ export function About() {
     <Section id="about">
 
       <Container>
-        <Grid>
           <ImageWrapper>
             <ImageContainer>
               <AboutImage
@@ -194,7 +194,6 @@ export function About() {
               </SpecsGrid>
             </div>
           </ContentWrapper>
-        </Grid>
       </Container>
     </Section>
   )
