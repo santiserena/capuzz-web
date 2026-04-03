@@ -21,6 +21,7 @@ const NoItemsMsg = styled.p`
   line-height: 1.7;
 `;
 
+/* ,,, ver si conviene cambiar las filas para que se luzca el zoom */
 const GalleryGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
