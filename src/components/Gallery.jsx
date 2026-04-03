@@ -256,7 +256,7 @@ export function Gallery({ filters }) {
           ))}
         </GalleryGrid>
       </Container>
-      {(visibleCount < artworks.length && filtered.length !== 0) && (
+      {visibleCount < artworks.length && filtered.length !== 0 && (
         <LoadMoreBtn onClick={() => setVisibleCount(visibleCount + 4)}>
           <span>LOAD MORE</span>
           <LoadMoreIcon />
