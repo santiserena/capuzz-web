@@ -19,6 +19,7 @@ const Glow = styled.div`
   max-width: 800px;
   height: 400px;
   background: radial-gradient(ellipse, rgba(201, 169, 98, 0.15), rgba(201, 169, 98, 0.08) 30%, transparent 70%);
+  pointer-events: none;
 `
 
 const Subtitle = styled.p`
