@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import styled from "styled-components";
 import { Lightbox } from "./Lightbox";
 import { ChevronDown } from "lucide-react";
@@ -231,6 +231,10 @@ export function Gallery({ filters }) {
       .slice(0, visibleCount);
   }, [filters, visibleCount]);
 
+  useEffect(() => {
+    setVisibleCount(6);
+  }, [filters]);
+
   return (
     <Section id="work">
       <Container>
@@ -252,7 +256,7 @@ export function Gallery({ filters }) {
           ))}
         </GalleryGrid>
       </Container>
-      {visibleCount < artworks.length && (
+      {(visibleCount < artworks.length && filtered.length !== 0) && (
         <LoadMoreBtn onClick={() => setVisibleCount(visibleCount + 4)}>
           <span>LOAD MORE</span>
           <LoadMoreIcon />
