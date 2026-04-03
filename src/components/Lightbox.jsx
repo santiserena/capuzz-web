@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { X } from "lucide-react"
+import styled from "styled-components";
+import { X } from "lucide-react";
 
 const Overlay = styled.div`
   position: fixed;
@@ -9,7 +9,7 @@ const Overlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const Image = styled.img`
   display: block;
@@ -17,7 +17,7 @@ const Image = styled.img`
   max-height: 85vh;
   object-fit: contain;
   margin-bottom: 3em;
-`
+`;
 
 const Info = styled.div`
   position: fixed;
@@ -30,26 +30,37 @@ const Info = styled.div`
   gap: 1rem;
   z-index: 101;
 
-  > span:first-child {
-    font-size: 0.875rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #c9a962;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0rem;
   }
-
-  > span:last-child {
-    font-family: var(--font-serif);
-    font-size: 1.75rem;
-    color: #f5f5f5;
-    font-weight: 400;
-  }
+`;
+const MediumText = styled.div`
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a962;
 
   @media (max-width: 767px) {
     flex-direction: column-reverse;
     align-items: center;
     gap: 0rem;
   }
-`
+`;
+
+const TitleText = styled.div`
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: #f5f5f5;
+  font-weight: 400;
+
+  @media (max-width: 767px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0rem;
+  }
+`;
 
 const CloseButton = styled.button`
   position: fixed;
@@ -61,19 +72,22 @@ const CloseButton = styled.button`
   padding: 0.5rem;
   transition: color 0.3s;
   z-index: 101;
-  &:hover { color: #c9a962; }
-`
+  &:hover {
+    color: #c9a962;
+  }
+`;
 
 export function Lightbox({ artwork, onClose }) {
   return (
-    <Overlay onClick={onClose}>
-      <CloseButton onClick={onClose}><X size={32} /></CloseButton>
-      {/* ,,, ver q es stopPropagation */}
-      <Image src={artwork.image} alt={artwork.title} onClick={(e) => e.stopPropagation()} />
-      <Info onClick={(e) => e.stopPropagation()}>
-        <span>{artwork.medium} / {artwork.category}</span>
-        <span>{artwork.title}</span>
+    <Overlay>
+      <CloseButton onClick={onClose}>
+        <X size={32} />
+      </CloseButton>
+      <Image src={artwork.image} alt={artwork.title} />
+      <Info>
+        <TitleText>{artwork.title}</TitleText>
+        <MediumText>{artwork.medium}</MediumText>
       </Info>
     </Overlay>
-  )
+  );
 }

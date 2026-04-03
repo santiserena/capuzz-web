@@ -10,7 +10,7 @@ const artworks = [
     title: "Tribute to Akira Toriyama",
     image: "/images/p1.png",
     /* ,,, tecnica usada: */
-    medium: "ink",
+    medium: "pencil",
     category: ["character"],
   },
   {
@@ -31,21 +31,21 @@ const artworks = [
     id: 4,
     title: "Among Us - Comic Cover",
     image: "/images/p7.png",
-    medium: "comic",
+    medium: "pencil",
     category: ["cover"],
   },
   {
     id: 5,
     title: "Follow - Study",
     image: "/images/p10.png",
-    medium: "ink",
+    medium: "pencil",
     category: ["character"],
   },
   {
     id: 6,
     title: "Tribute to Akira Toriyama",
     image: "/images/p1.png",
-    medium: "ink",
+    medium: "watercolor",
     category: ["character"],
   },
   {
@@ -66,14 +66,14 @@ const artworks = [
     id: 9,
     title: "Among Us - Comic Cover",
     image: "/images/p7.png",
-    medium: "comic",
+    medium: "digital",
     category: ["cover"],
   },
   {
     id: 10,
     title: "Follow - Study",
     image: "/images/p10.png",
-    medium: "ink",
+    medium: "digital",
     category: ["character"],
   },
 ];
@@ -250,7 +250,7 @@ export function Gallery({ filters }) {
               <ArtworkContent>
                 <ArtworkTitle>{artwork.title}</ArtworkTitle>
                 <ArtworkMeta>
-                  {artwork.medium} / {artwork.category}
+                  {artwork.medium}
                 </ArtworkMeta>
               </ArtworkContent>
             </ArtworkCard>
