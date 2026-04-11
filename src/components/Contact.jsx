@@ -87,10 +87,6 @@ const ContactCard = styled.a`
   border: 1px solid #2a2a2a;
   transition: border-color 0.3s;
 
-  @media (min-width: 768px) {
-    flex: 1 1 250px;
-  }
-
   &:hover {
     border-color: #c9a962;
   }
