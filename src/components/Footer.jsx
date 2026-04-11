@@ -37,6 +37,29 @@ const Copyright = styled.p`
   font-size: 0.875rem;
 `
 
+const DeveloperCredit = styled.p`
+  color: #555555;
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  
+  a {
+    color: #888888;
+    text-decoration: none;
+    transition: all 0.3s;
+    
+    @media (hover: hover) {
+      &:hover {
+        color: #c9a962;
+      }
+    }
+
+    &:active {
+      color: rgba(201, 169, 98, 0.7);
+    }
+  }
+`
+
 const NavLinks = styled.div`
   display: flex;
   align-items: center;
@@ -61,7 +84,12 @@ export function Footer() {
     <FooterWrapper>
       <Container>
         <Logo href="#">CAPUZZ</Logo>
-        <Copyright>&copy; {new Date().getFullYear()} All rights reserved.</Copyright>
+        <div style={{ textAlign: "center" }}>
+          <Copyright>&copy; {new Date().getFullYear()} All rights reserved.</Copyright>
+          <DeveloperCredit>
+            Developed by <a href="https://www.linkedin.com/in/santiagoserena" target="_blank" rel="noopener noreferrer">Santiago Serena</a>
+          </DeveloperCredit>
+        </div>
         <NavLinks>
           <NavLink href="#work">Gallery</NavLink>
           <NavLink href="#about">About</NavLink>

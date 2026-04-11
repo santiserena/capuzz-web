@@ -10,6 +10,7 @@ export const FILTERS = [
   { name: "character", active: false },
 ];
 
+/* Images in cloudinary */
 export const IMAGES = [
   {
     id: 1,

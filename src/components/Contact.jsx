@@ -2,19 +2,13 @@ import { Instagram, MessageCircle, Mail, ArrowUpRight } from "lucide-react"
 import styled from "styled-components"
 
 const contactMethods = [
+  /* ,,, llevar a data.js */
   {
     icon: Instagram,
     title: "Instagram",
     handle: "@capuzz.art",
     description: "Follow my latest work",
     href: "https://instagram.com/capuzz.art",
-  },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp",
-    handle: "Message me",
-    description: "Quick responses",
-    href: "https://wa.me/",
   },
   {
     icon: Mail,

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+/* ,,, llevar a data.js */
 const specializations = [
   "Character Design",
   "Environment Art",
