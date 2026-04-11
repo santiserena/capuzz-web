@@ -65,19 +65,26 @@ const Description = styled.p`
 `
 
 const CardsGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
   max-width: 56rem;
   margin: 0 auto 4rem;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
   }
 `
 
 const ContactCard = styled.a`
   display: block;
+  flex: 1 1 250px;
+  max-width: 380px;
+  width: 100%;
   padding: 1.5rem;
   border: 1px solid #2a2a2a;
   text-decoration: none;
