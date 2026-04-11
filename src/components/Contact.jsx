@@ -81,12 +81,15 @@ const ContactCards = styled.div`
 
 const ContactCard = styled.a`
   display: block;
-  flex: 1 1 250px;
   max-width: 380px;
   width: 100%;
   padding: 1rem;
   border: 1px solid #2a2a2a;
   transition: border-color 0.3s;
+
+  @media (min-width: 768px) {
+    flex: 1 1 250px;
+  }
 
   &:hover {
     border-color: #c9a962;
