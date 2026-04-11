@@ -79,6 +79,13 @@ const ContactCards = styled.div`
   }
 `;
 
+/* ,,, 
+1- Teminar footer 
+2-acomodar ancho de columnas de galería y cambiar nombres de componentes 
+3- limpiar tooooodo el cpodigo
+4- Ver si poner un btn para subir a
+*/
+
 const ContactCard = styled.a`
   display: block;
   max-width: 380px;
