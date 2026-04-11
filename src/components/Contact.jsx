@@ -143,31 +143,6 @@ const CardDescription = styled.p`
   font-size: 0.875rem;
 `;
 
-const DirectCTA = styled.div`
-  text-align: center;
-`;
-
-const CTALabel = styled.p`
-  color: #888888;
-  margin-bottom: 1rem;
-`;
-
-const CTALink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  letter-spacing: 0.1em;
-  color: #f5f5f5;
-  text-decoration: none;
-  transition: color 0.3s;
-
-  &:hover {
-    color: #c9a962;
-  }
-`;
-
 export function Contact() {
   return (
     <Section id="contact">
@@ -207,13 +182,6 @@ export function Contact() {
             </ContactCard>
           ))}
         </ContactCards>
-        <DirectCTA>
-          <CTALabel>Prefer a direct conversation?</CTALabel>
-          <CTALink href="mailto:hello@capuzz.art">
-            HELLO@CAPUZZ.ART
-            <ArrowUpRight size={24} />
-          </CTALink>
-        </DirectCTA>
       </Container>
     </Section>
   );
