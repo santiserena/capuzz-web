@@ -166,11 +166,6 @@ const SpecTag = styled.span`
   color: #888888;
   transition: all 0.3s;
   text-align: center;
-
-  &:hover {
-    border-color: #c9a962;
-    color: #c9a962;
-  }
 `;
 
 export function About() {
