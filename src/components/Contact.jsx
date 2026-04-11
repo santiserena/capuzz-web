@@ -1,5 +1,5 @@
-import { Instagram, MessageCircle, Mail, ArrowUpRight } from "lucide-react"
-import styled from "styled-components"
+import { Instagram, Mail, ArrowUpRight } from "lucide-react";
+import styled from "styled-components";
 
 const contactMethods = [
   /* ,,, llevar a data.js */
@@ -17,21 +17,21 @@ const contactMethods = [
     description: "For commissions",
     href: "mailto:hello@capuzz.art",
   },
-]
+];
 
 const Section = styled.section`
   padding: 6rem 1.5rem;
-`
+`;
 
 const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
-`
+`;
 
 const HeaderWrapper = styled.div`
   text-align: center;
   margin-bottom: 4rem;
-`
+`;
 
 const SectionLabel = styled.p`
   color: #c9a962;
@@ -39,7 +39,7 @@ const SectionLabel = styled.p`
   letter-spacing: 0.4em;
   margin-bottom: 1rem;
   text-transform: uppercase;
-`
+`;
 
 const SectionTitle = styled.h2`
   font-family: var(--font-serif);
@@ -47,22 +47,22 @@ const SectionTitle = styled.h2`
   letter-spacing: 0.05em;
   margin-bottom: 1.5rem;
   font-weight: 400;
-`
+`;
 
 const TitleWhite = styled.span`
   color: #f5f5f5;
-`
+`;
 
 const TitleGold = styled.span`
   color: #c9a962;
-`
+`;
 
 const Description = styled.p`
   color: #888888;
   max-width: 36rem;
   margin: 0 auto;
   line-height: 1.7;
-`
+`;
 
 const CardsGrid = styled.div`
   display: flex;
@@ -78,7 +78,7 @@ const CardsGrid = styled.div`
     justify-content: center;
     align-items: stretch;
   }
-`
+`;
 
 const ContactCard = styled.a`
   display: block;
@@ -102,57 +102,57 @@ const ContactCard = styled.a`
   &:hover .arrow {
     color: #c9a962;
   }
-`
+`;
 
 const CardHeader = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 2rem;
-`
+`;
 
 const IconWrapper = styled.div`
   padding: 0.75rem;
   border: 1px solid #2a2a2a;
   transition: border-color 0.3s;
-`
+`;
 
 const IconStyled = styled.div`
   color: #f5f5f5;
   transition: color 0.3s;
-`
+`;
 
 const ArrowStyled = styled(ArrowUpRight)`
   color: #888888;
   transition: color 0.3s;
-`
+`;
 
 const CardTitle = styled.h3`
   font-family: var(--font-serif);
   font-size: 1.25rem;
   color: #f5f5f5;
   margin-bottom: 0.25rem;
-`
+`;
 
 const CardHandle = styled.p`
   color: #c9a962;
   font-size: 0.875rem;
   margin-bottom: 0.25rem;
-`
+`;
 
 const CardDescription = styled.p`
   color: #888888;
   font-size: 0.875rem;
-`
+`;
 
 const DirectCTA = styled.div`
   text-align: center;
-`
+`;
 
 const CTALabel = styled.p`
   color: #888888;
   margin-bottom: 1rem;
-`
+`;
 
 const CTALink = styled.a`
   display: inline-flex;
@@ -168,12 +168,11 @@ const CTALink = styled.a`
   &:hover {
     color: #c9a962;
   }
-`
+`;
 
 export function Contact() {
   return (
     <Section id="contact">
-
       <Container>
         <HeaderWrapper>
           <SectionLabel>Get in Touch</SectionLabel>
@@ -188,7 +187,6 @@ export function Contact() {
             {"Let's bring your vision to life."}
           </Description>
         </HeaderWrapper>
-
         <CardsGrid>
           {contactMethods.map((method) => (
             <ContactCard
@@ -211,7 +209,6 @@ export function Contact() {
             </ContactCard>
           ))}
         </CardsGrid>
-
         <DirectCTA>
           <CTALabel>Prefer a direct conversation?</CTALabel>
           <CTALink href="mailto:hello@capuzz.art">
@@ -221,5 +218,5 @@ export function Contact() {
         </DirectCTA>
       </Container>
     </Section>
-  )
+  );
 }
