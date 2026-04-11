@@ -64,7 +64,7 @@ const Description = styled.p`
   line-height: 1.7;
 `;
 
-const CardsGrid = styled.div`
+const ContactCards = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,7 +76,6 @@ const CardsGrid = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: stretch;
   }
 `;
 
@@ -85,9 +84,8 @@ const ContactCard = styled.a`
   flex: 1 1 250px;
   max-width: 380px;
   width: 100%;
-  padding: 1.5rem;
+  padding: 1rem;
   border: 1px solid #2a2a2a;
-  text-decoration: none;
   transition: border-color 0.3s;
 
   &:hover {
@@ -108,7 +106,7 @@ const CardHeader = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1.3rem;
 `;
 
 const IconWrapper = styled.div`
@@ -187,7 +185,7 @@ export function Contact() {
             {"Let's bring your vision to life."}
           </Description>
         </HeaderWrapper>
-        <CardsGrid>
+        <ContactCards>
           {contactMethods.map((method) => (
             <ContactCard
               key={method.title}
@@ -208,7 +206,7 @@ export function Contact() {
               <CardDescription>{method.description}</CardDescription>
             </ContactCard>
           ))}
-        </CardsGrid>
+        </ContactCards>
         <DirectCTA>
           <CTALabel>Prefer a direct conversation?</CTALabel>
           <CTALink href="mailto:hello@capuzz.art">
