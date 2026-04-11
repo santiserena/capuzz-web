@@ -146,10 +146,16 @@ const SpecsLabel = styled.p`
 `;
 
 const SpecsGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 0.75rem;
-  justify-content: center;
+
+  @media (max-width: 935px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 364px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const SpecTag = styled.span`
@@ -160,14 +166,6 @@ const SpecTag = styled.span`
   color: #888888;
   transition: all 0.3s;
   text-align: center;
-  flex: 1;
-
-  @media (max-width: 935px) {
-    flex: 0 0 47%;
-  }
-  @media (max-width: 364px) {
-    flex: 0 0 96%;
-  }
 
   &:hover {
     border-color: #c9a962;
