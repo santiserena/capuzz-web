@@ -149,6 +149,7 @@ const SpecsGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  justify-content: center;
 `;
 
 const SpecTag = styled.span`
@@ -158,6 +159,15 @@ const SpecTag = styled.span`
   border: 1px solid #2a2a2a;
   color: #888888;
   transition: all 0.3s;
+  text-align: center;
+  flex: 1;
+
+  @media (max-width: 935px) {
+    flex: 0 0 47%;
+  }
+  @media (max-width: 364px) {
+    flex: 0 0 96%;
+  }
 
   &:hover {
     border-color: #c9a962;
