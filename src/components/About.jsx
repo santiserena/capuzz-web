@@ -52,11 +52,17 @@ const AboutImage = styled.img`
 
 const StatsOverlay = styled.div`
   position: absolute;
-  bottom: -2rem;
+  bottom: -2.5rem;
   left: -2rem;
   background-color: #0a0a0a;
   border: 1px solid #2a2a2a;
-  padding: 1.5rem;
+  padding: 0.8rem;
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+  }
+  @media (min-width: 1280px) {
+    padding: 2rem;
+  }
 `;
 
 const StatsNumber = styled.p`
