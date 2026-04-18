@@ -8,7 +8,6 @@ const FooterWrapper = styled.footer`
     margin-top: 5rem;
   }
 `;
-
 const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;

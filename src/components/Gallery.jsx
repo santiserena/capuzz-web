@@ -23,8 +23,9 @@ const NoItemsMsg = styled.p`
 
 /* ,,, ver si conviene cambiar las filas para que se luzca el zoom (esto cambiara la cantidad de card en load more) */
 /* ,,, ver loading de carga de dibujos */
-/* ,,, ajustar la posición del btn de errar el zoom */
-/* ,,, poner el data de matoy a menor para que ponga los nuevos arriba */
+/* ,,, ajustar la posición del btn de cerrar el zoom */
+/* ,,, Poner el data de mayor a menor para que ponga los nuevos arriba */
+/* ,,, normalizacion de todo el proyecto */
 const GalleryGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
