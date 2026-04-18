@@ -74,7 +74,6 @@ const ContactCards = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
   }
 `;

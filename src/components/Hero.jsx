@@ -109,7 +109,7 @@ export function Hero() {
         <Title>CAPUZZ</Title>
         <Description>
           Crafting dark fantasy worlds, mythical creatures, and unforgettable
-          characters through ink, watercolor, and digital artistry
+          characters through ink, watercolor, and digital artistry.
         </Description>
         <Buttons>
           <Button $primaryBtn href="#work">VIEW PORTFOLIO</Button>
