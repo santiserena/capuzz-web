@@ -3,6 +3,10 @@ import styled from "styled-components";
 const FooterWrapper = styled.footer`
   padding: 0.5rem 1.5rem;
   border-top: 0.5px solid #2a2a2a;
+  margin-top: 3rem;
+  @media (min-width: 768px) {
+    margin-top: 5rem;
+  }
 `;
 
 const Container = styled.div`
