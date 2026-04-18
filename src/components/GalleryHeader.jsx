@@ -8,7 +8,7 @@ const Section = styled.section`
   padding: 3rem 1.5rem;
 
   @media (min-width: 768px) {
-    padding: 4.5rem 1.5rem;
+    padding: 5rem 1.5rem;
   }
 `;
 

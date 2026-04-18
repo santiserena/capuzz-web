@@ -5,12 +5,10 @@ const HeroSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1.5rem;
-  padding-top: 6rem;
-  padding-bottom: 3rem;
+  padding: 6rem 1.5rem 3rem;
   text-align: center;
    @media (min-width: 768px) {
-    padding-bottom: 4.5rem;
+    padding-bottom: 5rem;
   }
 `
 
