@@ -70,7 +70,7 @@ const ContactCards = styled.div`
   align-items: center;
   gap: 1.5rem;
   max-width: 56rem;
-  margin: 0 auto 4rem;
+  margin: 0 auto 0rem;
 
   @media (min-width: 768px) {
     flex-direction: row;
