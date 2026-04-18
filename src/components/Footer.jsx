@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
-  padding: 2rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border-top: 1px solid #2a2a2a;
 `;
 
@@ -11,12 +11,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.2rem;
 `;
 
 const Logo = styled.a`
   font-family: var(--font-serif);
-  font-size: 1.125rem;
+  font-size: 1rem;
   letter-spacing: 0.3em;
   color: #c9a962;
   text-decoration: none;
@@ -35,9 +35,8 @@ const Copyright = styled.p`
 const DeveloperCredit = styled.p`
   color: #555555;
   font-size: 0.7rem;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
   text-align: center;
-
   a {
     color: #888888;
     text-decoration: none;
