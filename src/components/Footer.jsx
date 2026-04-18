@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
   padding: 0.5rem 1.5rem;
-  border-top: 1px solid #2a2a2a;
+  border-top: 0.5px solid #2a2a2a;
 `;
 
 const Container = styled.div`

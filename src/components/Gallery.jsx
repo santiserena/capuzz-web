@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import { IMAGES } from "../lib/data";
 
 const Section = styled.section`
-  padding: 4rem 1.5rem;
+  padding: 0rem 1.5rem;
 `;
 
 const Container = styled.div`

@@ -7,7 +7,11 @@ const HeroSection = styled.section`
   justify-content: center;
   padding: 1.5rem;
   padding-top: 6rem;
+  padding-bottom: 3rem;
   text-align: center;
+   @media (min-width: 768px) {
+    padding-bottom: 4.5rem;
+  }
 `
 
 const Glow = styled.div`

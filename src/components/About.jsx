@@ -13,8 +13,10 @@ const specializations = [
 ];
 
 const Section = styled.section`
-  padding: 6rem 1.5rem;
-  background-color: rgba(17, 17, 17, 0.5);
+  padding: 3rem 1.5rem;
+  @media (min-width: 768px) {
+    padding: 4.5rem 1.5rem;
+  }
 `;
 
 const Container = styled.div`
