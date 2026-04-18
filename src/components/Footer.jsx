@@ -1,9 +1,9 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
   padding: 2rem 1.5rem;
   border-top: 1px solid #2a2a2a;
-`
+`;
 
 const Container = styled.div`
   max-width: 1280px;
@@ -11,13 +11,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
-`
+`;
 
 const Logo = styled.a`
   font-family: var(--font-serif);
@@ -30,24 +25,24 @@ const Logo = styled.a`
   &:hover {
     color: rgba(201, 169, 98, 0.8);
   }
-`
+`;
 
 const Copyright = styled.p`
   color: #888888;
   font-size: 0.875rem;
-`
+`;
 
 const DeveloperCredit = styled.p`
   color: #555555;
   font-size: 0.7rem;
   margin-top: 0.5rem;
   text-align: center;
-  
+
   a {
     color: #888888;
     text-decoration: none;
     transition: all 0.3s;
-    
+
     @media (hover: hover) {
       &:hover {
         color: #c9a962;
@@ -58,26 +53,7 @@ const DeveloperCredit = styled.p`
       color: rgba(201, 169, 98, 0.7);
     }
   }
-`
-
-const NavLinks = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-`
-
-const NavLink = styled.a`
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: #888888;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color 0.3s;
-
-  &:hover {
-    color: #c9a962;
-  }
-`
+`;
 
 export function Footer() {
   return (
@@ -85,17 +61,21 @@ export function Footer() {
       <Container>
         <Logo href="#">CAPUZZ</Logo>
         <div style={{ textAlign: "center" }}>
-          <Copyright>&copy; {new Date().getFullYear()} All rights reserved.</Copyright>
+          <Copyright>
+            &copy; {new Date().getFullYear()} All rights reserved.
+          </Copyright>
           <DeveloperCredit>
-            Developed by <a href="https://www.linkedin.com/in/santiagoserena" target="_blank" rel="noopener noreferrer">Santiago Serena</a>
+            Developed by{" "}
+            <a
+              href="https://www.linkedin.com/in/santiagoserena"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Santiago Serena
+            </a>
           </DeveloperCredit>
         </div>
-        <NavLinks>
-          <NavLink href="#work">Gallery</NavLink>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#contact">Contact</NavLink>
-        </NavLinks>
       </Container>
     </FooterWrapper>
-  )
+  );
 }
