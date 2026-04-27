@@ -74,7 +74,7 @@ const FilterButtonContent = styled.span`
   gap: 0.4rem;
 `;
 
-export function GalleryHeader() {
+export function GallerySection() {
   const [filterBtnsArray, setFilterBtnsArray] = useState(FILTERS);
 
   const setFilters = (filter) => {

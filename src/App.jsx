@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { GalleryHeader } from "./components/GalleryHeader";
+import { GallerySection } from "./components/GallerySection";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -18,7 +18,7 @@ function App() {
       <Header />
       <Main>
         <Hero />
-        <GalleryHeader />
+        <GallerySection />
         <About />
         <Contact />
         <Footer />
