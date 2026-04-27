@@ -67,6 +67,7 @@ const Button = styled.a`
   font-size: 0.875rem;
   letter-spacing: 0.2rem;
   transition: all 0.3s;
+  min-width: 240px;
   ${props => props.$primaryBtn ? `
     background: #c9a962;
     color: #0a0a0a;
