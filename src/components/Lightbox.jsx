@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { X } from "lucide-react";
 
-/* ,,, ver si poner algo para zoom */
 const Overlay = styled.div`
   position: fixed;
   inset: 0;
