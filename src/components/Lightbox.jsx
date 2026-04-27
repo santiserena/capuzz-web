@@ -55,7 +55,7 @@ const MediumText = styled.div`
 
 const CloseButton = styled.button`
   position: fixed;
-  top: 1rem;
+  top: 1.2rem;
   right: 1.5rem;
   background: none;
   border: none;
