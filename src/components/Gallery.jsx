@@ -23,7 +23,6 @@ const NoItemsMsg = styled.p`
 
 /* ,,, ver si conviene cambiar las filas para que se luzca el zoom (esto cambiara la cantidad de card en load more) */
 /* ,,, ver loading de carga de dibujos */
-/* ,,, Poner el data de mayor a menor para que ponga los nuevos arriba */
 /* ,,, normalizacion de todo el proyecto */
 /* ,,, llevar toda la info a data */
 const GalleryGrid = styled.div`
