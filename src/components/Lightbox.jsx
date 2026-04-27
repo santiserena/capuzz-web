@@ -55,13 +55,13 @@ const MediumText = styled.div`
 
 const CloseButton = styled.button`
   position: fixed;
-  top: 1.5rem;
+  top: 1rem;
   right: 1.5rem;
   background: none;
   border: none;
   color: #f5f5f5;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0;
   transition: color 0.3s;
   z-index: 101;
   &:hover {
@@ -73,7 +73,7 @@ export function Lightbox({ artwork, onClose }) {
   return (
     <Overlay>
       <CloseButton onClick={onClose}>
-        <X size={32} />
+        <X />
       </CloseButton>
       <Image src={artwork.image} alt={artwork.title} />
       <Info>
