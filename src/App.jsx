@@ -13,7 +13,6 @@ const Main = styled.main`
 
 function App() {
   return (
-    /* ,,, ver puerto 5173 */
     <>
       <Header />
       <Main>

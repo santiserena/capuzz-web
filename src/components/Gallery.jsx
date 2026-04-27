@@ -26,7 +26,6 @@ const NoItemsMsg = styled.p`
 /* ,,, ajustar la posición del btn de cerrar el zoom */
 /* ,,, Poner el data de mayor a menor para que ponga los nuevos arriba */
 /* ,,, normalizacion de todo el proyecto */
-/* ,,, cambiar puerto */
 /* ,,, llevar toda la info a data */
 const GalleryGrid = styled.div`
   display: grid;
